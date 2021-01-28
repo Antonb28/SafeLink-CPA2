@@ -91,7 +91,6 @@ public class CreditLoading {
         CardNumTextField.clear();
         Credit.clear();
         CVVTextField.clear();
-        Cr.setText("--------");
     }
 
     @FXML
