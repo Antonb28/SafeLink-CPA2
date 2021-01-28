@@ -1,6 +1,7 @@
 package org.openjfx;
 import java.io.*;
 import java.net.PasswordAuthentication;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
@@ -23,7 +24,6 @@ public class CreditLoading {
 
     private static final String newLine = System.getProperty("line.separator");
 
-
     @FXML
     private void TakePayment() {
         String CardNum = CardNumTextField.getText();
@@ -38,6 +38,7 @@ public class CreditLoading {
         String LN = (String.valueOf(LastName));
 
 
+
         String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
 
         try {
@@ -50,12 +51,14 @@ public class CreditLoading {
             Optional<ButtonType> result = alert.showAndWait();
 
             if (creditcardnum.length() == 16 && cvv.length() == 3 && date.length() == 5) {
-                if (result.get() == ButtonType.OK) {
+                if (result.isPresent() && result.get() == ButtonType.OK) {
                     fw.write(newLine + i + ". "+"First Name:" + FN + "|Last Name:" + LN + "|Credit Card Number:" + creditcardnum + "|CVV:" + cvv + "|Expiry Date:" + date);
                     fw.close();
                     ConfirmButton.setDisable(false);
+                    throw new NoSuchElementException("Fail");
                 }
             }
+
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
