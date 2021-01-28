@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.Admin">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3f909a" height="538.0" layoutX="-15.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="835.0" />
+        <Label fx:id="LogInPrompt" alignment="CENTER" layoutX="244.0" layoutY="308.0" prefHeight="20.0" prefWidth="567.0" text=" " textFill="#ffa6a6">
+            <font>
+                <Font name="Arial Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="473.0" layoutY="339.0" textFill="WHITE">
+            <font>
+                <Font name="Arial Bold" size="19.0" />
+            </font>
+        </Label>
+        <Accordion />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3f909a" height="508.0" layoutX="20.0" layoutY="14.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="8.0" width="779.0" />
+        <Label layoutX="43.0" layoutY="29.0" prefHeight="48.0" prefWidth="733.0" text="Hello Admin! " textFill="WHITE">
+            <font>
+                <Font name="Arial Bold" size="55.0" />
+            </font>
+        </Label>
+      <Button layoutX="43.0" layoutY="95.0" mnemonicParsing="false" prefHeight="196.0" prefWidth="233.0" text="Credit Loading Transactions" />
+      <Button layoutX="40.0" layoutY="305.0" mnemonicParsing="false" prefHeight="196.0" prefWidth="233.0" text="Travel Transactions" />
+      <Button layoutX="287.0" layoutY="95.0" mnemonicParsing="false" prefHeight="196.0" prefWidth="239.0" text="Credit Spend History" />
+      <Button layoutX="288.0" layoutY="305.0" mnemonicParsing="false" prefHeight="196.0" prefWidth="239.0" text="Health Form Responses" />
+      <Button layoutX="542.0" layoutY="95.0" mnemonicParsing="false" prefHeight="196.0" prefWidth="233.0" text="Try User" />
+      <Button layoutX="542.0" layoutY="305.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="196.0" prefWidth="233.0" text="Log Out" />
+    </children>
+</Pane>
