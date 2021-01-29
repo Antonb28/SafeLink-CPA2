@@ -45,7 +45,7 @@
         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="134.0" layoutX="278.0" layoutY="69.0" stroke="#3f909a" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="2.0" width="501.0" />
         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="273.0" layoutX="274.0" layoutY="226.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="236.0" />
         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="263.0" layoutX="280.0" layoutY="231.0" stroke="#3f909a" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="2.0" width="224.0" />
-        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#dcfff0" height="277.0" layoutX="608.0" layoutY="224.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="176.0" />
+        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#dcfff0" height="277.0" layoutX="528.0" layoutY="224.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="256.0" />
         <Label fx:id="GreetingPrompt1" alignment="CENTER" layoutX="607.0" layoutY="233.0" prefHeight="49.0" prefWidth="176.0" text="Digital Queue">
             <font>
                 <Font name="Arial Bold" size="25.0" />

@@ -7,11 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-//Anton test - working
-//lol test lol if u read this then
-// it works omg lol
-// wth
-//Paul Preux
 
 /**
  * JavaFX App
