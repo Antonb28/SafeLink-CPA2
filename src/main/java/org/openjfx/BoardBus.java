@@ -12,11 +12,13 @@ import java.io.IOException;
 public class BoardBus {
     ObservableList<String> currentStationList = FXCollections.observableArrayList("Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue");
     ObservableList<String> destinationStationList = FXCollections.observableArrayList("Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue");
+
     @FXML
-    Label Destination, Station, Price, RemainingCredit;
+    Label Destination, Station, Price, RemainingCredit, QueueLabel;
 
     @FXML
     ChoiceBox currentStation, destinationStationBox;
+
 
     @FXML
     Button confirm;
@@ -46,10 +48,6 @@ public class BoardBus {
         App.setRoot("MainMenu");
     }
 
-    @FXML
-    private void RideBus() throws IOException{
-        App.setRoot("OnBusScreen");
-    }
 
     @FXML
     private void updateLabels() {
@@ -150,4 +148,30 @@ public class BoardBus {
     }
 
 
+    @FXML
+    private void RideBus() throws IOException {
+        int random = (int) Math.random()*(20-1+1)+1;
+        int temp = random;
+        int count = 0;
+        int i;
+        MyQueue myQueue = new MyQueue(20);
+
+        if(count == 0){
+           for (i = 0; i==random; i++){
+               myQueue.push(i);
+            }
+           count++;
+        }
+
+        else if ((int) myQueue.front()==temp){
+            myQueue.pop();
+        }
+
+        else {
+            App.setRoot("OnBusScreen");
+        }
+        temp--;
+        QueueLabel.setText(String.valueOf(temp));
+
+    }
 }
