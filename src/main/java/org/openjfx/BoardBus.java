@@ -6,7 +6,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 
 
 public class BoardBus {
@@ -140,7 +143,56 @@ public class BoardBus {
             int price = 50 + (5*difference);
             Price.setText(String.valueOf(price) + " PHP");
         }
+
+        BoardBus boardBus = new BoardBus();
+        String secondpath = System.getProperty("user.dir") + "\\src\\credit.txt";
+        boardBus.ReadFromLast(secondpath);
+
     }
+
+    public void ReadFromLast(String secondpath){
+        int lines = 0;
+        StringBuilder stringBuilder = new StringBuilder();
+        RandomAccessFile randomAccessFile= null;
+        try {
+            randomAccessFile = new RandomAccessFile(secondpath, "r");
+            long fileLength = secondpath.length() - 1;
+            // Set the pointer at the last of the file
+            randomAccessFile.seek(fileLength);
+            for(long pointer = fileLength; pointer >= 0; pointer--){
+                randomAccessFile.seek(pointer);
+                char c;
+                // read from the last one char at the time
+                c = (char)randomAccessFile.read();
+                // break when end of the line
+                if(c == '\n'){
+                    break;
+                }
+                stringBuilder.append(c);
+            }
+            // Since line is read from the last so it
+            // is in reverse so use reverse method to make it right
+            stringBuilder.reverse();
+            System.out.println("Line - " + stringBuilder.toString());
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally{
+            if(randomAccessFile != null){
+                try {
+                    randomAccessFile.close();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
     @FXML
     private void initialize(){
         currentStation.setItems(currentStationList);

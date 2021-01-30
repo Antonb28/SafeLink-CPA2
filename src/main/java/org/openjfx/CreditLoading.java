@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 
 
 public class CreditLoading {
-    int i, j, intcred;
+    int i, intcred;
     @FXML
     public TextField FirstNameTextField, LastNameTextField, DateTextField, CardNumTextField, Credit;
 
@@ -36,8 +36,6 @@ public class CreditLoading {
         String FN = (String.valueOf(FirstName));
         String LastName = LastNameTextField.getText();
         String LN = (String.valueOf(LastName));
-
-
 
         String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
 
@@ -73,9 +71,8 @@ public class CreditLoading {
         Cr.setText(String.valueOf(intcred));
 
         try {
-            j+=1;
             FileWriter fw = new FileWriter(secondpath, true);
-            fw.write(newLine + j + ". " + "Credit: " + intcred);
+            fw.write(newLine + ". " + "Credit: " + intcred);
             fw.close();
         }
 
@@ -83,7 +80,6 @@ public class CreditLoading {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-
     }
 
     @FXML
