@@ -3,12 +3,14 @@ package org.openjfx;
 import java.io.IOException;
 import java.util.*;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.control.Button;
+import javafx.stage.FileChooser;
+import java.io.File;
 
 import java.util.Random;
-
-import static org.openjfx.App.*;
 
 public class BusScreen {
     @FXML
@@ -21,17 +23,98 @@ public class BusScreen {
     Rectangle box31, box32, box33, box34, box35, box36, box37, box38, box39, box40;
     @FXML
     Rectangle box41, box42, box43, box44, box45, box46, box47, box48;
+    @FXML
+    Button PrevButton, NextButton,SelectQRButton;
+    @FXML
+    Label CurrentStationLabel;
+
 
     int[] array = new int[48];
     Random rn = new Random();
     Queue<Rectangle> q = new LinkedList<>();
-
+    String[] Stations = {"Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue"};
+    int index;
     @FXML
     private void Back() throws IOException {
         App.setRoot("MainMenu");
     }
+    public void SelectQR() {
+        File file;
+        String path;
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select File");
+        file = fileChooser.showOpenDialog(null);
+        path = file.getName();
+        System.out.println(path);
+        switch (path){
+            case "Taft Avenue.png":
+
+                index=0;
+                break;
+            case "Magallanes.png":
+
+                index=1;
+                break;
+            case "Ayala.png":
+
+                index=2;
+                break;
+            case "Buendia.png":
+
+                index=3;
+                break;
+            case "Guadalupe.png":
+
+                index=4;
+                break;
+            case "Boni.png":
+
+                index=5;
+                break;
+            case "Shaw.png":
+
+                index=6;
+                break;
+            case "Ortigas.png":
+
+                index=7;
+                break;
+            case "Santolan.png":
+
+                index=8;
+                break;
+            case "Cubao.png":
+
+                index=9;
+                break;
+            case "Quezon Avenue.png":
+                index=10;
+                break;
+        }
+        CurrentStationLabel.setText(Stations[index]);
+
+    }
+    public void PreviousStation(){
+        if (index < 0){
+            index++;
+            CurrentStationLabel.setText("No Previous Station");
+        }
+        else {
+            CurrentStationLabel.setText(Stations[index--]);
+        }
+    }
+
+    public void NextStation(){
+        if (index > 10){
+            index--;
+            CurrentStationLabel.setText("No Next Station");
+        }
+        else {
+            CurrentStationLabel.setText(Stations[index++]);
+        }
+    }
     public void ScanQR(){
-        int i, j, k, min, minIndex;;
+        int i, j, k, min, minIndex;
 
         for(k = 0; k < 48; k++) {
             array[k] = rn.nextInt(4);
@@ -68,7 +151,6 @@ public class BusScreen {
         else{
             box1.setFill(Paint.valueOf("5bae4c"));
         }
-
 
         if(array[1] == 1){
             box2.setFill(Paint.valueOf("5bae4c"));
@@ -682,4 +764,5 @@ public class BusScreen {
         }
 
     }
+
 }

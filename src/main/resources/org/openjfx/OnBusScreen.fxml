@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.BusScreen" >
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.BusScreen">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3f909a" height="538.0" layoutX="-7.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="613.0" />
         <Rectangle fx:id="Side8" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="194.0" layoutX="19.0" layoutY="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="567.0" />
@@ -90,5 +90,13 @@
       </Label>
       <Button layoutX="624.0" layoutY="477.0" mnemonicParsing="false" onAction="#Back" prefHeight="43.0" prefWidth="168.0" text="Exit Bus" />
       <Button layoutX="405.0" layoutY="358.0" mnemonicParsing="false" onAction="#ScanQR" prefHeight="43.0" prefWidth="168.0" text="Test Analysis" />
+      <Button fx:id="SelectQRButton" layoutX="43.0" layoutY="358.0" mnemonicParsing="false" onAction="#SelectQR" prefHeight="43.0" prefWidth="108.0" text="Scan QR Code" />
+      <Label fx:id="CurrentStationLabel" layoutX="300.0" layoutY="277.0" prefHeight="36.0" prefWidth="274.0">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="NextButton" layoutX="176.0" layoutY="465.0" mnemonicParsing="false" onAction="#NextStation" text="Next Station" />
+      <Button fx:id="PrevButton" layoutX="43.0" layoutY="465.0" mnemonicParsing="false" onAction="#PreviousStation" text="Previous Station" />
     </children>
 </Pane>
