@@ -6,22 +6,30 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-
+import java.util.Random;
+import java.util.Queue;
+import java.util.LinkedList;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.io.*;
-
 
 public class BoardBus {
     ObservableList<String> currentStationList = FXCollections.observableArrayList("Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue");
     ObservableList<String> destinationStationList = FXCollections.observableArrayList("Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue");
 
     @FXML
-    Label Destination, Station, Price, RemainingCredit, QueueLabel, RemainingCredit1, Message;
+    Label Destination, Station, Price, RemainingCredit, RemainingCredit1, Message, QueueNumber, Time, Date;
 
     @FXML
     ChoiceBox currentStation, destinationStationBox;
 
     @FXML
-    Button confirm, ConfirmButton;
+    Button confirm, ConfirmButton, RideBus;
+
+    int count = 0;
+    Random rn = new Random();
+    int queuenum = rn.nextInt(50);
+    Queue<Integer> pq = new LinkedList<>();
 
     @FXML
     private void LogOut() throws IOException {
@@ -140,6 +148,11 @@ public class BoardBus {
             int price = 50 + (5*difference);
             Price.setText(String.valueOf(price));
         }
+        LocalDate date = LocalDate.now();
+        LocalTime time = LocalTime.now();
+
+        Date.setText(String.valueOf(date));
+        Time.setText(String.valueOf(time));
         ConfirmButton.setDisable(false);
     }
 
@@ -172,6 +185,7 @@ public class BoardBus {
         }
 
         in.close();
+        RideBus.setDisable(false);
     }
 
     @FXML
@@ -182,7 +196,18 @@ public class BoardBus {
 
     @FXML
     private void RideBus() throws IOException {
-
-
+        if(count == 0) {
+            for (int i = queuenum; i >= 0; i--) {
+                pq.add(i);
+            }
+            count++;
+        }
+        else if(pq.isEmpty()){
+            App.setRoot("OnBusScreen");
+        }
+        else{
+            QueueNumber.setText(String.valueOf(pq.peek()));
+            pq.remove();
+        }
     }
 }

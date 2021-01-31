@@ -13,12 +13,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-import static javafx.fxml.FXMLLoader.*;
-
-//Food(f) --> Credit
-//Transpo(t) --> BoardBus
-//Print(prints) --> Available Routes
-
 public class MainMenu {
     @FXML
     Label GreetingPrompt, credit;
@@ -48,7 +42,7 @@ public class MainMenu {
 
     @FXML
     private void fillForm() throws IOException {
-        App.setRoot("LogIn");
+        App.setRoot("SafeForm");
     }
 
     @FXML
