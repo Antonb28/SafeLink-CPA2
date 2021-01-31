@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 
 
 public class CreditLoading {
-    int i, intcred;
+    int i, intcred, getIntcred;
     @FXML
     public TextField FirstNameTextField, LastNameTextField, DateTextField, CardNumTextField, Credit;
 
@@ -62,22 +62,36 @@ public class CreditLoading {
     }
 
     @FXML
-    private void ViewCredit() {
-        String secondpath = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
-        String cred = Credit.getText();
-        intcred += Integer.parseInt(cred);
-        Cr.setText(String.valueOf(intcred));
+    private void ViewCredit() throws IOException {
+        String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
+        FileInputStream in = new FileInputStream(path);
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        FileWriter fw = new FileWriter(path, true);
 
-        try {
-            FileWriter fw = new FileWriter(secondpath, true);
-            fw.write(intcred + "\n");
+        String strLine = null, tmp;
+        while ((tmp = br.readLine()) != null) {
+            strLine = tmp;
+        }
+
+        String Cred = Credit.getText();
+        int creds = Integer.parseInt(Cred);
+        getIntcred+=creds;
+        Cr.setText(String.valueOf(getIntcred));
+        fw.write(creds+"\n");
+        fw.flush();
+
+        try{
+            String lastLine = strLine;
+            intcred = creds + Integer.parseInt(lastLine);
+            fw.write(intcred+"\n");
             fw.close();
         }
-
-        catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+        catch (NumberFormatException e){
+            System.out.println("NumberFormatException is handled");
         }
+
+        in.close();
+
     }
 
     @FXML
