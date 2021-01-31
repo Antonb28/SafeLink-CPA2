@@ -7,9 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 
 
 public class BoardBus {
@@ -17,7 +15,7 @@ public class BoardBus {
     ObservableList<String> destinationStationList = FXCollections.observableArrayList("Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue");
 
     @FXML
-    Label Destination, Station, Price, RemainingCredit, QueueLabel;
+    Label Destination, Station, Price, RemainingCredit, QueueLabel, RemainingCredit1, Message;
 
     @FXML
     ChoiceBox currentStation, destinationStationBox;
@@ -53,7 +51,7 @@ public class BoardBus {
 
 
     @FXML
-    private void updateLabels() {
+    private void updateLabels() throws IOException {
         Station.setText((String) currentStation.getValue());
         Destination.setText((String) destinationStationBox.getValue());
 
@@ -137,60 +135,38 @@ public class BoardBus {
         if (difference < 0) {
             difference = difference * -1;
             int price = 50 + (5 * difference);
-            Price.setText(String.valueOf(price) + " PHP");
+            Price.setText(String.valueOf(price));
         }
         else {
             int price = 50 + (5*difference);
-            Price.setText(String.valueOf(price) + " PHP");
+            Price.setText(String.valueOf(price));
         }
-
-        BoardBus boardBus = new BoardBus();
-        String secondpath = System.getProperty("user.dir") + "\\src\\credit.txt";
-        boardBus.ReadFromLast(secondpath);
-
+        ReadFromLast();
     }
 
-    public void ReadFromLast(String secondpath){
-        int lines = 0;
-        StringBuilder stringBuilder = new StringBuilder();
-        RandomAccessFile randomAccessFile= null;
-        try {
-            randomAccessFile = new RandomAccessFile(secondpath, "r");
-            long fileLength = secondpath.length() - 1;
-            // Set the pointer at the last of the file
-            randomAccessFile.seek(fileLength);
-            for(long pointer = fileLength; pointer >= 0; pointer--){
-                randomAccessFile.seek(pointer);
-                char c;
-                // read from the last one char at the time
-                c = (char)randomAccessFile.read();
-                // break when end of the line
-                if(c == '\n'){
-                    break;
-                }
-                stringBuilder.append(c);
-            }
-            // Since line is read from the last so it
-            // is in reverse so use reverse method to make it right
-            stringBuilder.reverse();
-            System.out.println("Line - " + stringBuilder.toString());
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+    public void ReadFromLast() throws IOException {
+        String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
+        FileInputStream in = new FileInputStream(path);
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        String strLine = null, tmp;
+        while ((tmp = br.readLine()) != null) {
+            strLine = tmp;
         }
-        catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }finally{
-            if(randomAccessFile != null){
-                try {
-                    randomAccessFile.close();
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
+        String lastLine = strLine;
+        RemainingCredit1.setText(lastLine);
+        String credit = RemainingCredit1.getText();
+        String price = Price.getText();
+        int rcredit = Integer.parseInt(credit);
+        int rprice = Integer.parseInt(price);
+        int change = rcredit - rprice;
+        if (rcredit>=rprice){
+            RemainingCredit.setText(String.valueOf(change));
         }
+
+        else {
+            Message.setText("Insufficent Funds!");
+        }
+        in.close();
     }
 
     @FXML

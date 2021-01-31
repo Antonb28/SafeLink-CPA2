@@ -22,7 +22,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("OnBusScreen"));
+        scene = new Scene(loadFXML("BoardBus"));
         stage.setScene(scene);
         stage.show();
     }
