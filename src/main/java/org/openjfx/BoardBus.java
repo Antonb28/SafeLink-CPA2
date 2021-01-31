@@ -6,7 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import java.io.IOException;
+
+import java.io.*;
 
 
 public class BoardBus {
@@ -14,7 +15,7 @@ public class BoardBus {
     ObservableList<String> destinationStationList = FXCollections.observableArrayList("Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue");
 
     @FXML
-    Label Destination, Station, Price, RemainingCredit, QueueLabel;
+    Label Destination, Station, Price, RemainingCredit, QueueLabel, RemainingCredit1, Message;
 
     @FXML
     ChoiceBox currentStation, destinationStationBox;
@@ -50,7 +51,7 @@ public class BoardBus {
 
 
     @FXML
-    private void updateLabels() {
+    private void updateLabels() throws IOException {
         Station.setText((String) currentStation.getValue());
         Destination.setText((String) destinationStationBox.getValue());
 
@@ -134,13 +135,40 @@ public class BoardBus {
         if (difference < 0) {
             difference = difference * -1;
             int price = 50 + (5 * difference);
-            Price.setText(String.valueOf(price) + " PHP");
+            Price.setText(String.valueOf(price));
         }
         else {
             int price = 50 + (5*difference);
-            Price.setText(String.valueOf(price) + " PHP");
+            Price.setText(String.valueOf(price));
         }
+        ReadFromLast();
     }
+
+    public void ReadFromLast() throws IOException {
+        String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
+        FileInputStream in = new FileInputStream(path);
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        String strLine = null, tmp;
+        while ((tmp = br.readLine()) != null) {
+            strLine = tmp;
+        }
+        String lastLine = strLine;
+        RemainingCredit1.setText(lastLine);
+        String credit = RemainingCredit1.getText();
+        String price = Price.getText();
+        int rcredit = Integer.parseInt(credit);
+        int rprice = Integer.parseInt(price);
+        int change = rcredit - rprice;
+        if (rcredit>=rprice){
+            RemainingCredit.setText(String.valueOf(change));
+        }
+
+        else {
+            Message.setText("Insufficent Funds!");
+        }
+        in.close();
+    }
+
     @FXML
     private void initialize(){
         currentStation.setItems(currentStationList);

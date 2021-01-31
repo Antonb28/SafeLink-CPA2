@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 
 
 public class CreditLoading {
-    int i, j, intcred;
+    int i, intcred;
     @FXML
     public TextField FirstNameTextField, LastNameTextField, DateTextField, CardNumTextField, Credit;
 
@@ -37,9 +37,7 @@ public class CreditLoading {
         String LastName = LastNameTextField.getText();
         String LN = (String.valueOf(LastName));
 
-
-
-        String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
+        String path = System.getProperty("user.dir") + "\\src\\text.txt";
 
         try {
             i+=1;
@@ -52,10 +50,9 @@ public class CreditLoading {
 
             if (creditcardnum.length() == 16 && cvv.length() == 3 && date.length() == 5) {
                 if (result.isPresent() && result.get() == ButtonType.OK) {
-                    fw.write(newLine + i + ". "+"First Name:" + FN + "|Last Name:" + LN + "|Credit Card Number:" + creditcardnum + "|CVV:" + cvv + "|Expiry Date:" + date);
+                    fw.write( i + ". "+"First Name:" + FN + "|Last Name:" + LN + "|Credit Card Number:" + creditcardnum + "|CVV:" + cvv + "|Expiry Date:" + date + newLine);
                     fw.close();
                     ConfirmButton.setDisable(false);
-                    throw new NoSuchElementException("Fail");
                 }
             }
 
@@ -67,15 +64,14 @@ public class CreditLoading {
 
     @FXML
     private void ViewCredit() {
-        String secondpath = System.getProperty("user.dir") + "\\src\\credit.txt";
+        String secondpath = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
         String cred = Credit.getText();
         intcred += Integer.parseInt(cred);
         Cr.setText(String.valueOf(intcred));
 
         try {
-            j+=1;
             FileWriter fw = new FileWriter(secondpath, true);
-            fw.write(newLine + j + ". " + "Credit: " + intcred);
+            fw.write(intcred + newLine);
             fw.close();
         }
 
@@ -83,7 +79,6 @@ public class CreditLoading {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-
     }
 
     @FXML
