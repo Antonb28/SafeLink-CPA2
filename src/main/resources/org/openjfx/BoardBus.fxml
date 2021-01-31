@@ -86,7 +86,7 @@
                 <Font name="Arial Bold" size="21.0" />
             </font>
         </Label>
-        <Label fx:id="Price" alignment="CENTER" layoutX="681.0" layoutY="82.0" prefHeight="49.0" prefWidth="86.0" text="-- PHP">
+        <Label fx:id="Price" alignment="CENTER" layoutX="681.0" layoutY="82.0" prefHeight="49.0" prefWidth="86.0">
             <font>
                 <Font name="Arial Bold" size="21.0" />
             </font>
@@ -106,17 +106,12 @@
                 <Font name="Arial Bold" size="29.0" />
             </font>
         </Label>
-        <Label fx:id="RemainingCredit" alignment="CENTER" layoutX="660.0" layoutY="123.0" prefHeight="49.0" prefWidth="127.0" text="-- PHP">
+        <Label fx:id="RemainingCredit" alignment="CENTER" layoutX="660.0" layoutY="123.0" prefHeight="49.0" prefWidth="127.0">
             <font>
                 <Font name="Arial Bold" size="21.0" />
             </font>
         </Label>
-        <Label fx:id="GreetingPrompt1113111" layoutX="60.0" layoutY="166.0" prefHeight="33.0" prefWidth="55.0" text="Credit:">
-            <font>
-                <Font name="Arial Bold" size="15.0" />
-            </font>
-        </Label>
-        <Label fx:id="RemainingCredit1" alignment="CENTER" layoutX="115.0" layoutY="158.0" prefHeight="49.0" prefWidth="127.0" text="-- PHP">
+        <Label fx:id="RemainingCredit1" alignment="CENTER" layoutX="86.0" layoutY="173.0" prefHeight="22.0" prefWidth="93.0">
             <font>
                 <Font name="Arial Bold" size="15.0" />
             </font>
@@ -139,20 +134,11 @@
             <Font name="Arial Bold" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="112.0" layoutY="174.0" text="PHP">
-         <font>
-            <Font name="Arial Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="650.0" layoutY="90.0" prefHeight="33.0" prefWidth="41.0" text="PHP">
-         <font>
-            <Font name="Arial Bold" size="15.0" />
-         </font>
-      </Label>
       <Label fx:id="Message" layoutX="438.0" layoutY="24.0" prefHeight="33.0" prefWidth="256.0" textFill="RED">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
+      <Button fx:id="ConfirmButton" disable="true" layoutX="319.0" layoutY="460.0" mnemonicParsing="false" onAction="#ReadFromLast" prefHeight="17.0" prefWidth="93.0" text="Confirm " />
     </children>
 </Pane>

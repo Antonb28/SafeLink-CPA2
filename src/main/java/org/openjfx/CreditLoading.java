@@ -22,7 +22,6 @@ public class CreditLoading {
     @FXML
     public PasswordField CVVTextField;
 
-    private static final String newLine = System.getProperty("line.separator");
 
     @FXML
     private void TakePayment() {
@@ -37,7 +36,7 @@ public class CreditLoading {
         String LastName = LastNameTextField.getText();
         String LN = (String.valueOf(LastName));
 
-        String path = System.getProperty("user.dir") + "\\src\\text.txt";
+        String path = System.getProperty("user.dir") + "\\src\\Credit.txt";
 
         try {
             i+=1;
@@ -50,7 +49,7 @@ public class CreditLoading {
 
             if (creditcardnum.length() == 16 && cvv.length() == 3 && date.length() == 5) {
                 if (result.isPresent() && result.get() == ButtonType.OK) {
-                    fw.write( i + ". "+"First Name:" + FN + "|Last Name:" + LN + "|Credit Card Number:" + creditcardnum + "|CVV:" + cvv + "|Expiry Date:" + date + newLine);
+                    fw.write( i + ". "+"First Name:" + FN + "|Last Name:" + LN + "|Credit Card Number:" + creditcardnum + "|CVV:" + cvv + "|Expiry Date:" + date + "\n");
                     fw.close();
                     ConfirmButton.setDisable(false);
                 }
@@ -71,7 +70,7 @@ public class CreditLoading {
 
         try {
             FileWriter fw = new FileWriter(secondpath, true);
-            fw.write(intcred + newLine);
+            fw.write(intcred + "\n");
             fw.close();
         }
 

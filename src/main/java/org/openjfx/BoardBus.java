@@ -20,9 +20,8 @@ public class BoardBus {
     @FXML
     ChoiceBox currentStation, destinationStationBox;
 
-
     @FXML
-    Button confirm;
+    Button confirm, ConfirmButton;
 
     @FXML
     private void LogOut() throws IOException {
@@ -141,12 +140,13 @@ public class BoardBus {
             int price = 50 + (5*difference);
             Price.setText(String.valueOf(price));
         }
-        ReadFromLast();
+        ConfirmButton.setDisable(false);
     }
 
     public void ReadFromLast() throws IOException {
         String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
         FileInputStream in = new FileInputStream(path);
+        FileWriter fileWriter = new FileWriter(path, true);
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         String strLine = null, tmp;
         while ((tmp = br.readLine()) != null) {
@@ -156,16 +156,21 @@ public class BoardBus {
         RemainingCredit1.setText(lastLine);
         String credit = RemainingCredit1.getText();
         String price = Price.getText();
-        int rcredit = Integer.parseInt(credit);
-        int rprice = Integer.parseInt(price);
-        int change = rcredit - rprice;
-        if (rcredit>=rprice){
-            RemainingCredit.setText(String.valueOf(change));
+        int realcredit = Integer.parseInt(credit);
+        int realprice = Integer.parseInt(price);
+        int realchange = realcredit - realprice;
+
+        if (realcredit>=realprice){
+            RemainingCredit.setText(String.valueOf(realchange));
+            String change = RemainingCredit.getText();
+            fileWriter.write(change+"\n");
+            fileWriter.close();
         }
 
-        else {
+        else if(realcredit < realprice){
             Message.setText("Insufficent Funds!");
         }
+
         in.close();
     }
 
@@ -175,31 +180,9 @@ public class BoardBus {
         destinationStationBox.setItems(destinationStationList);
     }
 
-
     @FXML
     private void RideBus() throws IOException {
-        int random = (int) Math.random()*(20-1+1)+1;
-        int temp = random;
-        int count = 0;
-        int i;
-        MyQueue myQueue = new MyQueue(20);
 
-        if(count == 0){
-           for (i = 0; i==random; i++){
-               myQueue.push(i);
-            }
-           count++;
-        }
-
-        else if ((int) myQueue.front()==temp){
-            myQueue.pop();
-        }
-
-        else {
-            App.setRoot("OnBusScreen");
-        }
-        temp--;
-        QueueLabel.setText(String.valueOf(temp));
 
     }
 }
