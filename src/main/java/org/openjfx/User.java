@@ -13,7 +13,7 @@ package org.openjfx;
                 } else {
                     return 0;
                 }
-            } else if (User.equals("jeremiah_jensen@dlsu.edu.ph")) {
+            } else if (User.equals("jeremiah_jensen")) {
                 if (Pass.equals("PreuxMcGarvin")) {
                     return 4;
                 } else {

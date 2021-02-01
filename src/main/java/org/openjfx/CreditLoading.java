@@ -89,7 +89,6 @@ public class CreditLoading {
         catch (NumberFormatException e){
             System.out.println("NumberFormatException is handled");
         }
-
         in.close();
 
     }
