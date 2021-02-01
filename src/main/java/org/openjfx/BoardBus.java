@@ -53,7 +53,7 @@ public class BoardBus {
 
     @FXML
     private void ViewCredit() throws IOException {
-        App.setRoot("MainMenu");
+        App.setRoot("UserDetails");
     }
 
 

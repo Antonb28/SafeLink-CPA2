@@ -118,6 +118,11 @@ public class CreditLoading {
         App.setRoot("HelpMenu");
     }
 
+    @FXML
+    private void UserDetails() throws IOException{
+        App.setRoot("UserDetails");
+    }
+
 
 }
 

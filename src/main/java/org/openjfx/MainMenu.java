@@ -51,8 +51,8 @@ public class MainMenu {
     }
 
     @FXML
-    private void ViewCredit(){
-        credit.setText("CREDIT: " + "0");
+    private void ViewCredit() throws IOException{
+        App.setRoot("UserDetails");
     }
 
 

@@ -4,7 +4,8 @@ import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-public class Routes {
+public class UserDetails {
+
     @FXML
     private void Back() throws IOException {
         App.setRoot("MainMenu");
@@ -23,10 +24,5 @@ public class Routes {
     @FXML
     private void Help() throws IOException{
         App.setRoot("HelpMenu");
-    }
-
-    @FXML
-    private void ViewCredit() throws IOException{
-        App.setRoot("UserDetails");
     }
 }

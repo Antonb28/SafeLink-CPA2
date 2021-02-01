@@ -53,6 +53,10 @@ public class SafeForm {
     public SafeForm() throws IOException {
     }
 
+    public void UserDetails() throws IOException {
+        App.setRoot("UserDetails");
+    }
+
     public void Help() throws IOException {
         App.setRoot("HelpMenu");
     }
