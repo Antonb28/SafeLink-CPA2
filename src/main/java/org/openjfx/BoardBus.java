@@ -197,7 +197,7 @@ public class BoardBus {
     @FXML
     private void RideBus() throws IOException {
         if(count == 0) {
-            for (int i = queuenum; i >= 0; i--) {
+            for (int i = queuenum; i > 0; i--) {
                 pq.add(i);
             }
             count++;

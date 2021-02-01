@@ -92,7 +92,7 @@ public class BusScreen {
                 break;
         }
         CurrentStationLabel.setText(Stations[index]);
-
+        ScanQR();
     }
     public void PreviousStation(){
         if (index < 0){
@@ -101,6 +101,7 @@ public class BusScreen {
         }
         else {
             CurrentStationLabel.setText(Stations[index--]);
+            ScanQR();
         }
     }
 
@@ -111,6 +112,7 @@ public class BusScreen {
         }
         else {
             CurrentStationLabel.setText(Stations[index++]);
+            ScanQR();
         }
     }
     public void ScanQR(){
