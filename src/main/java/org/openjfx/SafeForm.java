@@ -53,6 +53,18 @@ public class SafeForm {
     public SafeForm() throws IOException {
     }
 
+    public void Help() throws IOException {
+        App.setRoot("HelpMenu");
+    }
+
+    public void LogOut() throws IOException {
+        App.setRoot("LogIn");
+    }
+
+    public void Back() throws IOException {
+        App.setRoot("MainMenu");
+    }
+
     @FXML
     private void TakeAnswers() throws IOException {
         YesButton1.setToggleGroup(RD1);

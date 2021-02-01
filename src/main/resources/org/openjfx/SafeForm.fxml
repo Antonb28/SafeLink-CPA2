@@ -44,7 +44,7 @@
         <Button fx:id="Help" layoutX="32.0" layoutY="303.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="180.0" text="Help Menu" />
         <Button fx:id="LogOut" layoutX="30.0" layoutY="445.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="180.0" text="Log Out" />
         <Button fx:id="ViewC" layoutX="31.0" layoutY="377.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="180.0" text="Transaction History" />
-        <Button fx:id="SafetyForm" layoutX="32.0" layoutY="231.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="180.0" text="Back" />
+        <Button fx:id="Back" layoutX="32.0" layoutY="231.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="180.0" text="Back" />
         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="434.0" layoutX="273.0" layoutY="64.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="511.0" />
         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="424.0" layoutX="278.0" layoutY="69.0" stroke="#3f909a" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="2.0" width="501.0" />
         <Label fx:id="GreetingPrompt11" layoutX="271.0" layoutY="16.0" prefHeight="49.0" prefWidth="275.0" text="Safety Form" textFill="WHITE">
@@ -52,24 +52,24 @@
                 <Font name="Arial Bold" size="32.0" />
             </font>
         </Label>
-        <Label fx:id="GreetingPrompt111" layoutX="294.0" layoutY="165.0" prefHeight="49.0" prefWidth="461.0" text="2. Are you vaccinated?" textFill="#55ad8f">
+        <Label fx:id="GreetingPrompt111" layoutX="298.0" layoutY="169.0" prefHeight="49.0" prefWidth="461.0" text="2. Are you vaccinated?" textFill="#55ad8f">
             <font>
                 <Font name="Arial Bold" size="20.0" />
             </font>
         </Label>
-        <RadioButton fx:id="YesButton1" layoutX="348.0" layoutY="147.0" mnemonicParsing="false" text="Yes">
+        <RadioButton fx:id="YesButton1" layoutX="352.0" layoutY="151.0" mnemonicParsing="false" text="Yes">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>
             <toggleGroup>
                 <ToggleGroup fx:id="RD1" />
             </toggleGroup></RadioButton>
-        <RadioButton fx:id="NoButton1" layoutX="461.0" layoutY="146.0" mnemonicParsing="false" text="No" toggleGroup="$RD1">
+        <RadioButton fx:id="NoButton1" layoutX="465.0" layoutY="150.0" mnemonicParsing="false" text="No" toggleGroup="$RD1">
             <font>
                 <Font name="Arial Bold" size="13.0" />
             </font>
         </RadioButton>
-        <Label fx:id="GreetingPrompt1111" layoutX="294.0" layoutY="231.0" prefHeight="57.0" prefWidth="478.0" text="3. Have you traveled to any areas that have " textFill="#55ad8f">
+        <Label fx:id="GreetingPrompt1111" layoutX="298.0" layoutY="237.0" prefHeight="57.0" prefWidth="478.0" text="3. Have you traveled to any areas that have " textFill="#55ad8f">
             <font>
                 <Font name="Arial Bold" size="20.0" />
             </font>
@@ -78,7 +78,7 @@
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font></Button>
-        <RadioButton fx:id="YesButton2" layoutX="348.0" layoutY="213.0" mnemonicParsing="false" text="Yes">
+        <RadioButton fx:id="YesButton2" layoutX="352.0" layoutY="217.0" mnemonicParsing="false" text="Yes">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>
@@ -86,22 +86,22 @@
                 <ToggleGroup fx:id="RD2" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton fx:id="NoButton2" layoutX="461.0" layoutY="213.0" mnemonicParsing="false" text="No" toggleGroup="$RD2">
+        <RadioButton fx:id="NoButton2" layoutX="466.0" layoutY="217.0" mnemonicParsing="false" text="No" toggleGroup="$RD2">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>
         </RadioButton>
-        <Label fx:id="GreetingPrompt11111" layoutX="314.0" layoutY="259.0" prefHeight="57.0" prefWidth="430.0" text="confirmed cases in the last 14 days?" textFill="#55ad8f">
+        <Label fx:id="GreetingPrompt11111" layoutX="318.0" layoutY="265.0" prefHeight="57.0" prefWidth="430.0" text="confirmed cases in the last 14 days?" textFill="#55ad8f">
             <font>
                 <Font name="Arial Bold" size="20.0" />
             </font>
         </Label>
-        <Label fx:id="GreetingPrompt11112" layoutX="294.0" layoutY="333.0" prefHeight="57.0" prefWidth="478.0" text="4. Is it your first time travelling today?" textFill="#55ad8f">
+        <Label fx:id="GreetingPrompt11112" layoutX="295.0" layoutY="344.0" prefHeight="57.0" prefWidth="478.0" text="4. Is it your first time travelling today?" textFill="#55ad8f">
             <font>
                 <Font name="Arial Bold" size="20.0" />
             </font>
         </Label>
-        <RadioButton fx:id="YesButton3" layoutX="348.0" layoutY="310.0" mnemonicParsing="false" text="Yes">
+        <RadioButton fx:id="YesButton3" layoutX="352.0" layoutY="316.0" mnemonicParsing="false" text="Yes">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>
@@ -109,22 +109,22 @@
                 <ToggleGroup fx:id="RD3" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton fx:id="NoButton3" layoutX="463.0" layoutY="310.0" mnemonicParsing="false" text="No" toggleGroup="$RD3">
+        <RadioButton fx:id="NoButton3" layoutX="467.0" layoutY="316.0" mnemonicParsing="false" text="No" toggleGroup="$RD3">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>
         </RadioButton>
-        <Label fx:id="GreetingPrompt111121" layoutX="290.0" layoutY="72.0" prefHeight="57.0" prefWidth="478.0" text="1. Have you been experiencing any " textFill="#55ad8f">
+        <Label fx:id="GreetingPrompt111121" layoutX="295.0" layoutY="76.0" prefHeight="57.0" prefWidth="478.0" text="1. Have you been experiencing any " textFill="#55ad8f">
             <font>
                 <Font name="Arial Bold" size="20.0" />
             </font>
         </Label>
-        <Label fx:id="GreetingPrompt1111211" layoutX="314.0" layoutY="91.0" prefHeight="57.0" prefWidth="478.0" text="symptoms of covid-19 in the last 14 days?" textFill="#55ad8f">
+        <Label fx:id="GreetingPrompt1111211" layoutX="318.0" layoutY="95.0" prefHeight="57.0" prefWidth="478.0" text="symptoms of covid-19 in the last 14 days?" textFill="#55ad8f">
             <font>
                 <Font name="Arial Bold" size="20.0" />
             </font>
         </Label>
-        <RadioButton fx:id="YesButton4" layoutX="348.0" layoutY="382.0" mnemonicParsing="false" text="Yes">
+        <RadioButton fx:id="YesButton4" layoutX="351.0" layoutY="393.0" mnemonicParsing="false" text="Yes">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>
@@ -132,7 +132,7 @@
                 <ToggleGroup fx:id="RD4" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton fx:id="NoButton4" layoutX="463.0" layoutY="382.0" mnemonicParsing="false" text="No" toggleGroup="$RD4">
+        <RadioButton fx:id="NoButton4" layoutX="464.0" layoutY="393.0" mnemonicParsing="false" text="No" toggleGroup="$RD4">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>
