@@ -157,7 +157,7 @@ public class BoardBus {
     }
 
     public void ReadFromLast() throws IOException {
-        String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
+        String path = System.getProperty("user.dir") + "\\src\\Credit.txt";
         FileInputStream in = new FileInputStream(path);
         FileWriter fileWriter = new FileWriter(path, true);
         BufferedReader br = new BufferedReader(new InputStreamReader(in));

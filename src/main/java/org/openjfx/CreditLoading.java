@@ -22,7 +22,6 @@ public class CreditLoading {
     @FXML
     public PasswordField CVVTextField;
 
-
     @FXML
     private void TakePayment() {
         String CardNum = CardNumTextField.getText();
@@ -35,8 +34,7 @@ public class CreditLoading {
         String FN = (String.valueOf(FirstName));
         String LastName = LastNameTextField.getText();
         String LN = (String.valueOf(LastName));
-
-        String path = System.getProperty("user.dir") + "\\src\\Credit.txt";
+        String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
 
         try {
             i+=1;
@@ -63,7 +61,7 @@ public class CreditLoading {
 
     @FXML
     private void ViewCredit() throws IOException {
-        String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
+        String path = System.getProperty("user.dir") + "\\src\\Credit.txt";
         FileInputStream in = new FileInputStream(path);
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         FileWriter fw = new FileWriter(path, true);
@@ -90,7 +88,6 @@ public class CreditLoading {
             System.out.println("NumberFormatException is handled");
         }
         in.close();
-
     }
 
     @FXML

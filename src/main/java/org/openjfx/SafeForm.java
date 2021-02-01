@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class SafeForm {
     private static final String newLine = System.getProperty("line.separator");
-    String path = System.getProperty("user.dir") + "\\src\\safeform.txt";
+    String path = System.getProperty("user.dir") + "\\src\\Safeform.txt";
     FileWriter fw = new FileWriter(path, true);
 
     @FXML
@@ -123,7 +123,7 @@ public class SafeForm {
 
     private void Yes(){
         try {
-            fw.write(newLine + "1. Have you been experiencing any symptoms of covid-19 in the last 14 days?: "+"Yes");
+            fw.write("1. Have you been experiencing any symptoms of covid-19 in the last 14 days?: "+"Yes");
         }catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -133,7 +133,7 @@ public class SafeForm {
 
     private void No(){
         try {
-            fw.write(newLine + "1. Have you been experiencing any symptoms of covid-19 in the last 14 days?: "+"No");
+            fw.write("1. Have you been experiencing any symptoms of covid-19 in the last 14 days?: "+"No");
         }catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -143,7 +143,7 @@ public class SafeForm {
 
     private void Yes2(){
         try {
-            fw.write(newLine + "2. Are you vaccinated?: "+"Yes");
+            fw.write("2. Are you vaccinated?: "+"Yes");
         }catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -153,7 +153,7 @@ public class SafeForm {
 
     private void No2(){
         try {
-            fw.write(newLine + "2. Are you vaccinated?: "+"No");
+            fw.write("2. Are you vaccinated?: "+"No");
         }catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -164,7 +164,7 @@ public class SafeForm {
 
     private void Yes3(){
         try {
-            fw.write(newLine + "3. Have you traveled to any areas that have confirmed cases in the last 14 days?: "+"Yes");
+            fw.write("3. Have you traveled to any areas that have confirmed cases in the last 14 days?: "+"Yes");
         }catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -175,7 +175,7 @@ public class SafeForm {
 
     private void No3(){
         try {
-            fw.write(newLine + "3. Have you traveled to any areas that have confirmed cases in the last 14 days?: "+"No");
+            fw.write("3. Have you traveled to any areas that have confirmed cases in the last 14 days?: "+"No");
         }catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -186,7 +186,7 @@ public class SafeForm {
 
     private void Yes4(){
         try {
-            fw.write(newLine + "4. Is it your first time travelling today?: "+"Yes");
+            fw.write("4. Is it your first time travelling today?: "+"Yes");
         }catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -197,7 +197,7 @@ public class SafeForm {
 
     private void No4(){
         try {
-            fw.write(newLine+"4. Is it your first time travelling today?: "+"No"+newLine);
+            fw.write("4. Is it your first time travelling today?: "+"No"+newLine);
         }catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
