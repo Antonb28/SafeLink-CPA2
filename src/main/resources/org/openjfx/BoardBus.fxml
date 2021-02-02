@@ -108,11 +108,6 @@
                 <Font name="Arial Bold" size="21.0" />
             </font>
         </Label>
-        <Label fx:id="RemainingCredit1" alignment="CENTER" layoutX="86.0" layoutY="173.0" prefHeight="22.0" prefWidth="93.0">
-            <font>
-                <Font name="Arial Bold" size="15.0" />
-            </font>
-        </Label>
         <Label fx:id="GreetingPrompt1113112" alignment="CENTER" layoutX="277.0" layoutY="248.0" prefHeight="46.0" prefWidth="155.0" text="Enter Station">
             <font>
                 <Font name="Arial Bold" size="16.0" />
@@ -126,46 +121,36 @@
         <ChoiceBox fx:id="currentStation" layoutX="308.0" layoutY="288.0" prefHeight="27.0" prefWidth="182.0" />
         <ChoiceBox fx:id="destinationStationBox" layoutX="308.0" layoutY="363.0" prefHeight="27.0" prefWidth="182.0" />
         <Button fx:id="confirm" layoutX="330.0" layoutY="416.0" mnemonicParsing="false" onAction="#updateLabels" prefHeight="27.0" prefWidth="146.0" text="Select Stations" />
-      <Label fx:id="QueueNumber" alignment="CENTER" layoutX="604.0" layoutY="306.0" prefHeight="100.0" prefWidth="125.0" text="--">
-         <font>
-            <Font name="Arial Bold" size="96.0" />
-         </font>
-      </Label>
-      <Label fx:id="Message" layoutX="438.0" layoutY="24.0" prefHeight="33.0" prefWidth="256.0" textFill="RED">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Button fx:id="ConfirmButton" disable="true" layoutX="330.0" layoutY="453.0" mnemonicParsing="false" onAction="#ReadFromLast" prefHeight="27.0" prefWidth="146.0" text="Confirm " />
-      <Label fx:id="GreetingPrompt11133" alignment="CENTER" layoutX="288.0" layoutY="160.0" prefHeight="49.0" prefWidth="59.0" text="Date:">
-         <font>
-            <Font name="Arial Bold" size="21.0" />
-         </font>
-      </Label>
-      <Label fx:id="GreetingPrompt111331" alignment="CENTER" layoutX="580.0" layoutY="162.0" prefHeight="49.0" prefWidth="59.0" text="Time:">
-         <font>
-            <Font name="Arial Bold" size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="Date" alignment="CENTER" layoutX="354.0" layoutY="162.0" prefHeight="49.0" prefWidth="193.0" text="--">
-         <font>
-            <Font name="Arial Bold" size="21.0" />
-         </font>
-      </Label>
-      <Label fx:id="Time" alignment="CENTER" layoutX="645.0" layoutY="162.0" prefHeight="49.0" prefWidth="127.0" text="--">
-         <font>
-            <Font name="Arial" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="675.0" layoutY="93.0" text="PHP">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="643.0" layoutY="140.0" text="PHP">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-      </Label>
+        <Label fx:id="QueueNumber" alignment="CENTER" layoutX="604.0" layoutY="306.0" prefHeight="100.0" prefWidth="125.0" text="--">
+            <font>
+                <Font name="Arial Bold" size="96.0" />
+            </font>
+        </Label>
+        <Label fx:id="Message" layoutX="438.0" layoutY="24.0" prefHeight="33.0" prefWidth="256.0" textFill="RED">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Button fx:id="ConfirmButton" disable="true" layoutX="330.0" layoutY="453.0" mnemonicParsing="false" onAction="#ReadFromLast" prefHeight="27.0" prefWidth="146.0" text="Confirm " />
+        <Label fx:id="GreetingPrompt11133" alignment="CENTER" layoutX="288.0" layoutY="160.0" prefHeight="49.0" prefWidth="59.0" text="Date:">
+            <font>
+                <Font name="Arial Bold" size="21.0" />
+            </font>
+        </Label>
+        <Label fx:id="GreetingPrompt111331" alignment="CENTER" layoutX="580.0" layoutY="162.0" prefHeight="49.0" prefWidth="59.0" text="Time:">
+            <font>
+                <Font name="Arial Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="Date" alignment="CENTER" layoutX="354.0" layoutY="162.0" prefHeight="49.0" prefWidth="193.0" text="--">
+            <font>
+                <Font name="Arial Bold" size="21.0" />
+            </font>
+        </Label>
+        <Label fx:id="Time" alignment="CENTER" layoutX="645.0" layoutY="162.0" prefHeight="49.0" prefWidth="127.0" text="--">
+            <font>
+                <Font name="Arial" size="20.0" />
+            </font>
+        </Label>
     </children>
 </Pane>

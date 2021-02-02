@@ -18,7 +18,7 @@ public class BoardBus {
     ObservableList<String> destinationStationList = FXCollections.observableArrayList("Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue");
 
     @FXML
-    Label Destination, Station, Price, RemainingCredit, RemainingCredit1, Message, QueueNumber, Time, Date;
+    Label Destination, Station, Price, RemainingCredit, Message, QueueNumber, Time, Date;
 
     @FXML
     ChoiceBox currentStation, destinationStationBox;
@@ -165,12 +165,11 @@ public class BoardBus {
         while ((tmp = br.readLine()) != null) {
             strLine = tmp;
         }
-        String lastLine = strLine;
-        RemainingCredit1.setText(lastLine);
-        String credit = RemainingCredit1.getText();
+        String credit = strLine;
         String price = Price.getText();
         int realcredit = Integer.parseInt(credit);
-        int realprice = Integer.parseInt(price);
+        int realprice;
+        realprice = Integer.parseInt(price);
         int realchange = realcredit - realprice;
 
         if (realcredit>=realprice){
