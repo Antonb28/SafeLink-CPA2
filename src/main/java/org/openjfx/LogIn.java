@@ -8,19 +8,20 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class LogIn{
-
     @FXML
     TextField Username;
     @FXML
     PasswordField Password;
     @FXML
     Label LogInPrompt;
-
     @FXML
     private void LogIn() throws IOException {
-        //Path to text file
         String path = System.getProperty("user.dir") + "\\src\\Users.txt";
         BufferedReader br = null;
+        if(Username.getText().equals("Admin") && Password.getText().equals("Admin")){
+            App.setRoot("Admin");
+        }
+
         try {
             br = new BufferedReader(new FileReader(path));
         } catch (FileNotFoundException e) {
@@ -39,6 +40,7 @@ public class LogIn{
                 }
             }
         }
+
     }
 
     @FXML

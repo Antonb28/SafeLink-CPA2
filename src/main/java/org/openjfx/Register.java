@@ -13,24 +13,10 @@ public class Register {
     @FXML
     Label LogInPrompt;
 
-
     @FXML
     private void CreateAccount() throws IOException {
-        readFile();
-    }
-
-    @FXML
-    private void Reset() {
-        Username.clear();
-        Password.clear();
-        Password1.clear();
-        LogInPrompt.setText("");
-    }
-
-    void readFile() throws IOException {
         String path = System.getProperty("user.dir") + "\\src\\Users.txt";
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
-
         try {
             if(Password.getText().equals(Password1.getText())){
                 bufferedWriter.write(Username.getText() + "," + Password.getText());
@@ -44,5 +30,20 @@ public class Register {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void GoBack() throws IOException {
+        App.setRoot("LogIn");
+    }
+
+    @FXML
+    private void Reset() {
+        Username.clear();
+        Password.clear();
+        Password1.clear();
+        LogInPrompt.setText("");
+    }
+
+
 
 }

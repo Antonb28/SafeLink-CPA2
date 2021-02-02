@@ -110,7 +110,6 @@ public class BusScreen {
         else if (base == index ){
             CurrentStationLabel.setText(Stations[index]);
             arrival.setText("Arrived in destination, exit bus");
-
         }
         else {
             CurrentStationLabel.setText(Stations[index--]);
