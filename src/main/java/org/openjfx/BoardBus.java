@@ -31,6 +31,9 @@ public class BoardBus {
     int queuenum = rn.nextInt(50);
     Queue<Integer> pq = new LinkedList<>();
 
+    BusScreen bs = new BusScreen();
+    BusScreen diffy = new BusScreen();
+
     @FXML
     private void LogOut() throws IOException {
         App.setRoot("LogIn");
@@ -58,7 +61,7 @@ public class BoardBus {
 
 
     @FXML
-    private void updateLabels() throws IOException {
+    public void updateLabels() throws IOException {
         Station.setText((String) currentStation.getValue());
         Destination.setText((String) destinationStationBox.getValue());
 
@@ -150,10 +153,11 @@ public class BoardBus {
         }
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
-
         Date.setText(String.valueOf(date));
         Time.setText(String.valueOf(time));
         ConfirmButton.setDisable(false);
+        bs.setPresent_point(detinationStation_index);
+        diffy.setBase(currentStation_index);
     }
 
     public void ReadFromLast() throws IOException {
