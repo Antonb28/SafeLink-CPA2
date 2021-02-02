@@ -11,7 +11,7 @@ import javafx.scene.control.*;
 public class CreditLoading {
     int i, intcred, getIntcred;
     @FXML
-    public TextField FirstNameTextField, LastNameTextField, DateTextField, CardNumTextField, Credit;
+    public TextField DateTextField, CardNumTextField, Credit;
 
     @FXML
     public Label Cr;
@@ -30,10 +30,6 @@ public class CreditLoading {
         String cvv = (String.valueOf(CVV));
         String ExpiryDate = DateTextField.getText();
         String date = (String.valueOf(ExpiryDate));
-        String FirstName = FirstNameTextField.getText();
-        String FN = (String.valueOf(FirstName));
-        String LastName = LastNameTextField.getText();
-        String LN = (String.valueOf(LastName));
         String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
 
         try {
@@ -47,7 +43,7 @@ public class CreditLoading {
 
             if (creditcardnum.length() == 16 && cvv.length() == 3 && date.length() == 5) {
                 if (result.isPresent() && result.get() == ButtonType.OK) {
-                    fw.write( i + ". "+"First Name:" + FN + "|Last Name:" + LN + "|Credit Card Number:" + creditcardnum + "|CVV:" + cvv + "|Expiry Date:" + date + "\n");
+                    fw.write( i + "." + "Credit Card Number:" + creditcardnum + "\n" + "CVV:" +  cvv + "\n" + "Expiry Date:" + date + "\n");
                     fw.close();
                     ConfirmButton.setDisable(false);
                 }
@@ -92,8 +88,6 @@ public class CreditLoading {
 
     @FXML
     private void Clear(){
-        FirstNameTextField.clear();
-        LastNameTextField.clear();
         DateTextField.clear();
         CardNumTextField.clear();
         Credit.clear();

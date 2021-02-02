@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.CreditLoading">
     <children>
@@ -55,11 +60,6 @@
                 <Font name="Arial" size="24.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" layoutX="275.0" layoutY="230.0" prefHeight="27.0" prefWidth="117.0" text="First Name" textAlignment="CENTER">
-            <font>
-                <Font name="Arial" size="18.0" />
-            </font>
-        </Label>
         <ImageView fitHeight="22.0" fitWidth="39.0" layoutX="287.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../assets/visa-logo-121ECA05B2-seeklogo.com.png" />
@@ -80,49 +80,42 @@
                 <Image url="@../../assets/4-you-might-not-notice-amex-new-brand.png" />
             </image>
         </ImageView>
-        <Label alignment="CENTER" layoutX="275.0" layoutY="265.0" prefHeight="27.0" prefWidth="117.0" text="Last Name" textAlignment="CENTER">
+        <Label alignment="CENTER" layoutX="287.0" layoutY="245.0" prefHeight="27.0" prefWidth="117.0" text="Card Number" textAlignment="CENTER">
             <font>
                 <Font name="Arial" size="18.0" />
             </font>
         </Label>
-        <TextField fx:id="FirstNameTextField" layoutX="410.0" layoutY="230.0" prefHeight="27.0" prefWidth="354.0" />
-        <TextField fx:id="LastNameTextField" layoutX="410.0" layoutY="265.0" prefHeight="27.0" prefWidth="354.0" />
-        <Label alignment="CENTER" layoutX="287.0" layoutY="299.0" prefHeight="27.0" prefWidth="117.0" text="Card Number" textAlignment="CENTER">
+        <TextField fx:id="CardNumTextField" layoutX="411.0" layoutY="252.0" prefHeight="27.0" prefWidth="354.0" />
+        <Label alignment="CENTER" layoutX="287.0" layoutY="317.0" prefHeight="27.0" prefWidth="92.0" text="EXP Date" textAlignment="CENTER">
             <font>
                 <Font name="Arial" size="18.0" />
             </font>
         </Label>
-        <TextField fx:id="CardNumTextField" layoutX="410.0" layoutY="299.0" prefHeight="27.0" prefWidth="354.0" />
-        <Label alignment="CENTER" layoutX="287.0" layoutY="363.0" prefHeight="27.0" prefWidth="92.0" text="EXP Date" textAlignment="CENTER">
+        <TextField fx:id="DateTextField" layoutX="391.0" layoutY="317.0" prefHeight="27.0" prefWidth="92.0" />
+        <Label alignment="CENTER" layoutX="589.0" layoutY="317.0" prefHeight="27.0" prefWidth="59.0" text="CVV" textAlignment="CENTER">
             <font>
                 <Font name="Arial" size="18.0" />
             </font>
         </Label>
-        <TextField fx:id="DateTextField" layoutX="409.0" layoutY="363.0" prefHeight="27.0" prefWidth="92.0" />
-        <Label alignment="CENTER" layoutX="526.0" layoutY="363.0" prefHeight="27.0" prefWidth="59.0" text="CVV" textAlignment="CENTER">
-            <font>
-                <Font name="Arial" size="18.0" />
-            </font>
-        </Label>
-        <PasswordField fx:id="CVVTextField" layoutX="588.0" layoutY="363.0" prefHeight="27.0" prefWidth="92.0" />
+        <PasswordField fx:id="CVVTextField" layoutX="652.0" layoutY="317.0" prefHeight="27.0" prefWidth="92.0" />
         <Button fx:id="LoadCreditButton" layoutX="361.0" layoutY="469.0" mnemonicParsing="false" onAction="#TakePayment" prefHeight="27.0" prefWidth="123.0" text="Load Credit" />
-        <Label alignment="CENTER" layoutX="433.0" layoutY="424.0" prefHeight="27.0" prefWidth="123.0" text="Credit To Load" textAlignment="CENTER">
+        <Label alignment="CENTER" layoutX="414.0" layoutY="391.0" prefHeight="27.0" prefWidth="123.0" text="Credit To Load" textAlignment="CENTER">
             <font>
                 <Font name="Arial" size="18.0" />
             </font>
         </Label>
-        <TextField fx:id="Credit" layoutX="568.0" layoutY="424.0" prefHeight="27.0" prefWidth="92.0" />
-        <Label layoutX="413.0" layoutY="332.0" prefHeight="15.0" prefWidth="219.0" text="Enter 16 digit credit card number" textFill="RED">
+        <TextField fx:id="Credit" layoutX="543.0" layoutY="391.0" prefHeight="27.0" prefWidth="92.0" />
+        <Label layoutX="419.0" layoutY="286.0" prefHeight="15.0" prefWidth="219.0" text="Enter 16 digit credit card number" textFill="RED">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>
         </Label>
-        <Label layoutX="587.0" layoutY="394.0" prefHeight="15.0" prefWidth="104.0" text="Enter 3 digit CVV" textFill="RED">
+        <Label layoutX="646.0" layoutY="354.0" prefHeight="15.0" prefWidth="104.0" text="Enter 3 digit CVV" textFill="RED">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>
         </Label>
-        <Label layoutX="410.0" layoutY="394.0" prefHeight="15.0" prefWidth="208.0" text="Enter MM/YY" textFill="RED">
+        <Label layoutX="391.0" layoutY="346.0" prefHeight="15.0" prefWidth="92.0" text="Enter MM/YY" textFill="RED">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>

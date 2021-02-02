@@ -10,10 +10,13 @@ import javafx.scene.control.TextField;
 public class LogIn{
     @FXML
     TextField Username;
+
     @FXML
     PasswordField Password;
+
     @FXML
     Label LogInPrompt;
+
     @FXML
     private void LogIn() throws IOException {
         String path = System.getProperty("user.dir") + "\\src\\Users.txt";
@@ -36,11 +39,10 @@ public class LogIn{
                     break;
                 }
                 else {
-                    LogInPrompt.setText("Invalid");
+                    LogInPrompt.setText("Incorrect username/password");
                 }
             }
         }
-
     }
 
     @FXML

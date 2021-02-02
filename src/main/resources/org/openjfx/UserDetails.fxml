@@ -51,13 +51,13 @@
                 <Font name="Arial Bold" size="32.0" />
             </font>
         </Label>
-      <TextArea layoutX="292.0" layoutY="228.0" prefHeight="211.0" prefWidth="476.0">
+      <TextArea fx:id="Output" layoutX="292.0" layoutY="228.0" prefHeight="211.0" prefWidth="476.0">
          <font>
             <Font size="10.0" />
          </font>
       </TextArea>
       <Button layoutX="292.0" layoutY="445.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="219.0" text="Show Travel History" />
-      <Button layoutX="549.0" layoutY="445.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="219.0" text="Show Transaction History" />
+      <Button layoutX="549.0" layoutY="445.0" mnemonicParsing="false" onAction="#AddDetails" prefHeight="39.0" prefWidth="219.0" text="Show Transaction History" />
       <Label fx:id="GreetingPrompt111" layoutX="292.0" layoutY="71.0" prefHeight="49.0" prefWidth="72.0" text="Name:">
          <font>
             <Font name="Arial Bold" size="22.0" />

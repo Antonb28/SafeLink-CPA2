@@ -14,6 +14,9 @@ public class Admin {
     TextArea Output;
 
     @FXML
+    Button ClearButton;
+
+    @FXML
     private void LogOut() throws IOException {
         App.setRoot("LogIn");
     }
@@ -36,6 +39,11 @@ public class Admin {
         DisplayText(path);
     }
 
+    @FXML
+    private void Clear(){
+        Output.clear();
+    }
+
     private void DisplayCredit(String path) {
         try{
             Scanner s = new Scanner(new File(path)).useDelimiter("\\s+");
@@ -53,12 +61,12 @@ public class Admin {
 
     private void DisplayText(String path) {
         try{
-            Scanner s = new Scanner(new File(path)).useDelimiter("\\s+");
+            Scanner s = new Scanner(new File(path)).useDelimiter("");
             while (s.hasNext()) {
                 if (s.hasNextInt()) { // check if next token is an int
-                    Output.appendText(s.nextInt() + " "); // display the found integer
+                    Output.appendText(s.nextInt() + ""); // display the found integer
                 } else {
-                    Output.appendText(s.next() + " "); // else read the next token
+                    Output.appendText(s.next() + ""); // else read the next token
                 }
             }
         } catch (FileNotFoundException e) {
