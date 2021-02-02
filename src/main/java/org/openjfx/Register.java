@@ -23,6 +23,9 @@ public class Register {
                 bufferedWriter.newLine();
                 bufferedWriter.close();
             }
+            else if(Username.getText().isBlank()|| Password.getText().isBlank() || Password1.getText().isBlank()){
+                LogInPrompt.setText("Please input the missing data");
+            }
             else {
                 LogInPrompt.setText("Passwords do not match!");
             }

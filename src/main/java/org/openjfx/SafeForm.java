@@ -211,7 +211,7 @@ public class SafeForm {
     }
 
     @FXML
-    private void Clear() throws IOException {
+    private void Clear(){
         YesButton1.setSelected(false);
         NoButton1.setSelected(false);
         YesButton2.setSelected(false);
