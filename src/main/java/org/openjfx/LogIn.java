@@ -1,7 +1,10 @@
 package org.openjfx;
 
 
-import java.io.IOException;
+import java.io.*;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
@@ -20,27 +23,40 @@ public class LogIn{
 
     @FXML
     private void LogIn() throws IOException {
-        User us = new User();
+        boolean grantAccess = false;
+        String User = Username.getText();
+        String Pass = Password.getText();
+        String path = System.getProperty("user.dir") + "\\src\\Users.txt";
 
-        String User, Pass;
-        int action;
-        User = Username.getText();
-        Pass = Password.getText();
+        try {
+            Scanner read = new Scanner(new File(path));
+            int noOfLines=0; // count how many lines in the file
+            while(read.hasNextLine()){
+                noOfLines++;
+            }
 
-        action = us.CheckUser(User,Pass);
+            //loop through every line in the file and check against the user name & password (as I noticed you saved inputs in pairs of lines)
+            for(int i=0; i<noOfLines; i++){
+                if(read.nextLine().equals(User)){ // if the same user name
+                    i++;
+                    if(read.nextLine().equals(Pass)){ // check password
+                        grantAccess = true; // if also same, change boolean to true
+                        break; // and break the for-loop
+                }
+            }
+        }
+            if(grantAccess){
+                App.setRoot("MainMenu");
+            }
+            else{
+                LogInPrompt.setText("Invalid!");
+            }
 
-        if((action == 2)||(action == 3)||(action == 4)){
-            App.setRoot("MainMenu");
+            read.close();
+    } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-        else if(action == 0){
-            LogInPrompt.setText("Wrong Password, Try Again");
-        }
-        else if(action == 1){
-            LogInPrompt.setText("User does not exist, Try Again");
-        }
-        else if(action == 100){
-            App.setRoot("Admin");
-        }
+
     }
 
 

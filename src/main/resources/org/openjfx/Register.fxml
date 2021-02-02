@@ -19,7 +19,7 @@
         </ImageView>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#070707" height="359.0" layoutX="251.0" layoutY="74.0" opacity="0.74" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="537.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5bb9b5" height="538.0" layoutX="-2.0" layoutY="-6.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="229.0" />
-        <Label fx:id="LogInPrompt" alignment="CENTER" layoutX="249.0" layoutY="357.0" prefHeight="20.0" prefWidth="544.0" text="-Error Message Here-" textFill="#ffa6a6">
+        <Label fx:id="LogInPrompt" alignment="CENTER" layoutX="249.0" layoutY="357.0" prefHeight="20.0" prefWidth="544.0" textFill="#ffa6a6">
             <font>
                 <Font name="Arial Bold" size="16.0" />
             </font>
@@ -54,7 +54,7 @@
         </Label>
         <TextField fx:id="Username" layoutX="451.0" layoutY="195.0" prefHeight="27.0" prefWidth="289.0" />
         <PasswordField fx:id="Password" layoutX="451.0" layoutY="249.0" prefHeight="27.0" prefWidth="290.0" />
-        <Button fx:id="LogIn" layoutX="464.0" layoutY="390.0" mnemonicParsing="false" onAction="#LogIn" prefHeight="27.0" prefWidth="136.0" text="Create Account" />
+        <Button fx:id="Register" layoutX="464.0" layoutY="390.0" mnemonicParsing="false" onAction="#CreateAccount" prefHeight="27.0" prefWidth="136.0" text="Create Account" />
       <Label layoutX="328.0" layoutY="296.0" text="Re-Enter" textFill="#f5f5f5">
          <font>
             <Font name="Arial Bold" size="22.0" />
@@ -66,5 +66,6 @@
             <Font name="Arial Bold" size="23.0" />
          </font>
       </Label>
+      <Button fx:id="ResetButton" layoutX="630.0" layoutY="391.0" mnemonicParsing="false" onAction="#Reset" text="Reset" />
     </children>
 </Pane>
