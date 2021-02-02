@@ -67,6 +67,6 @@
          </font>
       </Label>
       <Button fx:id="ResetButton" layoutX="630.0" layoutY="391.0" mnemonicParsing="false" onAction="#Reset" text="Reset" />
-      <Button fx:id="LogInButton" layoutX="363.0" layoutY="391.0" mnemonicParsing="false" onAction="#CreateAccount" prefHeight="20.0" prefWidth="82.0" text="Log In" />
+      <Button fx:id="LogInButton" layoutX="363.0" layoutY="391.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="20.0" prefWidth="82.0" text="Log In" />
     </children>
 </Pane>
