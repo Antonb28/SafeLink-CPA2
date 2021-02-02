@@ -12,7 +12,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="808.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.Register">
     <children>
-        <ImageView fitHeight="550.0" fitWidth="848.0" layoutX="-20.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="550.0" fitWidth="848.0" layoutX="-20.0" onDragDetected="#GoBack" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../assets/LogInCity.jpg" />
             </image>
@@ -67,5 +67,6 @@
          </font>
       </Label>
       <Button fx:id="ResetButton" layoutX="630.0" layoutY="391.0" mnemonicParsing="false" onAction="#Reset" text="Reset" />
+      <Button fx:id="LogInButton" layoutX="363.0" layoutY="391.0" mnemonicParsing="false" onAction="#CreateAccount" prefHeight="20.0" prefWidth="82.0" text="Log In" />
     </children>
 </Pane>

@@ -26,14 +26,22 @@ public class BusScreen {
     @FXML
     Button PrevButton, NextButton,SelectQRButton;
     @FXML
-    Label CurrentStationLabel;
+    Label CurrentStationLabel, arrival;
 
 
     int[] array = new int[48];
     Random rn = new Random();
     Queue<Rectangle> q = new LinkedList<>();
+    int present_point,base;
     String[] Stations = {"Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue"};
     int index;
+
+    public void setPresent_point(int present_point){
+        this.present_point=present_point;
+    }
+    public void setBase(int base){
+        this.base=base;
+    }
     @FXML
     private void Back() throws IOException {
         App.setRoot("MainMenu");
@@ -99,6 +107,10 @@ public class BusScreen {
             index++;
             CurrentStationLabel.setText("No Previous Station");
         }
+        else if (base == index ){
+            CurrentStationLabel.setText(Stations[index]);
+            arrival.setText("Arrived in destination, exit bus");
+        }
         else {
             CurrentStationLabel.setText(Stations[index--]);
             ScanQR();
@@ -109,6 +121,11 @@ public class BusScreen {
         if (index > 10){
             index--;
             CurrentStationLabel.setText("No Next Station");
+        }
+        else if (present_point == index ){
+            CurrentStationLabel.setText(Stations[index]);
+            arrival.setText("Arrived in destination");
+
         }
         else {
             CurrentStationLabel.setText(Stations[index++]);
