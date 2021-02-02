@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class SafeForm {
     private static final String newLine = System.getProperty("line.separator");
-    String path = System.getProperty("user.dir") + "\\src\\Safeform.txt";
+    String path = System.getProperty("user.dir") + "\\src\\SafeForm.txt";
     FileWriter fw = new FileWriter(path, true);
 
     @FXML

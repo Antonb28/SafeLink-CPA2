@@ -32,7 +32,7 @@ public class Admin {
 
     @FXML
     private void OpenSafetyForm(){
-        String path = System.getProperty("user.dir") + "\\src\\Safeform.txt";
+        String path = System.getProperty("user.dir") + "\\src\\SafeForm.txt";
         DisplayText(path);
     }
 
