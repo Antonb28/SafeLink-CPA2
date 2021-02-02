@@ -33,9 +33,7 @@ public class Register {
 
         try {
             if(Password.getText().equals(Password1.getText())){
-                bufferedWriter.write(Username.getText());
-                bufferedWriter.newLine();
-                bufferedWriter.write(Password.getText());
+                bufferedWriter.write(Username.getText() + "," + Password.getText());
                 bufferedWriter.newLine();
                 bufferedWriter.close();
             }

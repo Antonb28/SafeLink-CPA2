@@ -1,2 +1,2 @@
-jericho
-preux
+jericho,preux
+proxyllion,proxprox
