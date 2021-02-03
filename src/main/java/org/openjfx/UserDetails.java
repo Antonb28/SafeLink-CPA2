@@ -33,7 +33,30 @@ public class UserDetails {
     }
 
     @FXML
-    private void AddDetails() {
+    private void Clear(){
+        Output.clear();
+    }
+
+    @FXML
+    private void TransactionHistory(){
+        String path = System.getProperty("user.dir") + "\\src\\Credit.txt";
+        try{
+            Scanner s = new Scanner(new File(path)).useDelimiter("\\s+");
+            while (s.hasNext()) {
+                if (s.hasNextInt()) { // check if next token is an int
+                    Output.appendText(s.nextInt() + "\n"); // display the found integer
+                } else {
+                    Output.appendText(s.next() + "\n"); // else read the next token
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.err.println(e);
+        }
+
+    }
+
+    @FXML
+    private void ShowDetails() {
         String path = System.getProperty("user.dir") + "\\src\\UserDetails.txt";
         try{
             Scanner s = new Scanner(new File(path)).useDelimiter("");
@@ -48,4 +71,6 @@ public class UserDetails {
             System.err.println(e);
         }
     }
+
+
 }

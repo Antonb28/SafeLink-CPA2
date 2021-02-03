@@ -1,6 +1,0 @@
-1.Credit Card Number:1111222233334444
-CVV:123
-Expiry Date:09/20
-1.Credit Card Number:1111222233334444
-CVV:100
-Expiry Date:02/02

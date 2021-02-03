@@ -1,10 +1,9 @@
 package org.openjfx;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-
+import javafx.scene.control.*;
 import java.io.*;
+import java.util.Optional;
 
 public class Register {
     @FXML
@@ -14,18 +13,42 @@ public class Register {
     Label LogInPrompt;
 
     @FXML
+    RadioButton Male, Female;
+
+    @FXML
+    ToggleGroup RB;
+
+    @FXML
     private void CreateAccount() throws IOException {
         String path = System.getProperty("user.dir") + "\\src\\Users.txt";
         String secondpath = System.getProperty("user.dir") + "\\src\\UserDetails.txt";
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
         BufferedWriter bufferedWriter1 = new BufferedWriter(new FileWriter(secondpath, true));
+        Male.setToggleGroup(RB);
+        Female.setToggleGroup(RB);
+
         try {
             if(Password.getText().equals(Password1.getText())){
-                bufferedWriter.write(Username.getText() + "," + Password.getText());
-                bufferedWriter.newLine();
-                bufferedWriter.close();
-                bufferedWriter1.write(FirstName.getText() + "\n" + LastName.getText() + "\n" + Age.getText() + "\n" + Sex.getText() + "\n" + Email.getText() + "\n");
-                bufferedWriter1.close();
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Confirmation");
+                alert.setHeaderText("Are all credentials correct?");
+                alert.setContentText("Exit this dialog box to continue editing\nClick ok to confirm");
+                Optional<ButtonType> result = alert.showAndWait();
+                if(result.isPresent() && result.get() == ButtonType.OK){
+                    bufferedWriter.write(Username.getText() + "," + Password.getText()+"\n");
+                    bufferedWriter.close();
+                    bufferedWriter1.write("First Name: " + FirstName.getText() + "\n");
+                    bufferedWriter1.write("Last Name: " + LastName.getText() + "\n");
+                    bufferedWriter1.write("Age: " + Age.getText() + "\n");
+                    if(Male.isSelected()){
+                        bufferedWriter1.write("Sex: " + "Male" + "\n");
+                    }
+                    if(Female.isSelected()){
+                        bufferedWriter1.write("Sex: " + "Female" + "\n");
+                    }
+                    bufferedWriter1.write("Email: " + Email.getText() + "\n");
+                    bufferedWriter1.close();
+                }
             }
             else {
                 LogInPrompt.setText("Passwords do not match!");
@@ -45,9 +68,12 @@ public class Register {
         Username.clear();
         Password.clear();
         Password1.clear();
+        FirstName.clear();
+        LastName.clear();
+        Email.clear();
+        Age.clear();
+        Sex.clear();
         LogInPrompt.setText("");
     }
-
-
 
 }
