@@ -28,31 +28,34 @@ public class Register {
         Female.setToggleGroup(RB);
 
         if(LastName.getText() == null || LastName.getText().trim().isEmpty()){
-            LogInPrompt.setText("Missing credential");
+            LogInPrompt.setText("Missing credential.");
         }
 
         else if(FirstName.getText() == null || FirstName.getText().trim().isEmpty()){
-            LogInPrompt.setText("Missing credential");
+            LogInPrompt.setText("Missing credential.");
         }
 
         else if(Username.getText() == null || Username.getText().trim().isEmpty()){
-            LogInPrompt.setText("Missing credential");
+            LogInPrompt.setText("Missing credential.");
         }
 
         else if(Password.getText() == null || Password.getText().trim().isEmpty()){
-            LogInPrompt.setText("Missing credential");
+            LogInPrompt.setText("Missing credential.");
         }
 
         else if(Password1.getText() == null || Password1.getText().trim().isEmpty()){
-            LogInPrompt.setText("Missing credential");
+            LogInPrompt.setText("Missing credential.");
         }
 
         else if(Email.getText() == null || Email.getText().trim().isEmpty()){
-            LogInPrompt.setText("Missing credential");
+            LogInPrompt.setText("Missing credential.");
+        }
+
+        else if(Age.getText() == null || Age.getText().trim().isEmpty()){
+            LogInPrompt.setText("Missing credential.");
         }
 
         else {
-
             try {
                 if (Password.getText().equals(Password1.getText())) {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -83,7 +86,6 @@ public class Register {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
     }
 
