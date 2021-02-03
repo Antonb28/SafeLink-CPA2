@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.BoardBusGreen">
+    <children>
+        <Rectangle fx:id="side21" arcHeight="5.0" arcWidth="5.0" fill="#48aba4" height="47.0" layoutX="16.0" layoutY="435.0" stroke="#355a2b" strokeType="INSIDE" strokeWidth="0.0" width="208.0" />
+        <Rectangle fx:id="side3" arcHeight="5.0" arcWidth="5.0" fill="#48aba4" height="47.0" layoutX="18.0" layoutY="293.0" stroke="#a19292" strokeType="INSIDE" strokeWidth="0.0" width="208.0" />
+        <Rectangle fx:id="side31" arcHeight="5.0" arcWidth="5.0" fill="#48aba4" height="47.0" layoutX="17.0" layoutY="367.0" stroke="#a19292" strokeType="INSIDE" strokeWidth="0.0" width="208.0" />
+        <Rectangle fx:id="Side5" arcHeight="5.0" arcWidth="5.0" fill="#a1a3a1" height="8.0" layoutX="-2.0" layoutY="165.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="256.0" />
+        <Label fx:id="Side9" alignment="CENTER" layoutX="2.0" layoutY="5.0" prefHeight="51.0" prefWidth="242.0" text="Safe" textFill="#55ad8f">
+            <font>
+                <Font name="Arial Bold" size="75.0" />
+            </font>
+        </Label>
+        <Rectangle fx:id="Side51" arcHeight="5.0" arcWidth="5.0" fill="#a1a3a1" height="8.0" layoutX="-5.0" layoutY="194.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="256.0" />
+        <Rectangle fx:id="Side8" arcHeight="5.0" arcWidth="5.0" fill="#55ad8f" height="52.0" layoutX="22.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="208.0" />
+        <Rectangle fx:id="side2" arcHeight="5.0" arcWidth="5.0" fill="#48aba4" height="47.0" layoutX="18.0" layoutY="221.0" stroke="#355a2b" strokeType="INSIDE" strokeWidth="0.0" width="208.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3f909a" height="538.0" layoutX="242.0" layoutY="-4.0" stroke="#3f909a" strokeType="INSIDE" strokeWidth="0.0" width="573.0" />
+        <Label fx:id="Side7" alignment="CENTER" layoutX="42.0" layoutY="72.0" prefHeight="57.0" prefWidth="155.0" text="Link" textFill="#eeeeee">
+            <font>
+                <Font name="Arial Bold" size="49.0" />
+            </font>
+        </Label>
+        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#3f909a" height="509.0" layoutX="253.0" layoutY="11.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="552.0" />
+        <Label layoutX="473.0" layoutY="339.0" textFill="WHITE">
+            <font>
+                <Font name="Arial Bold" size="19.0" />
+            </font>
+        </Label>
+        <Label fx:id="Side6" layoutX="43.0" layoutY="138.0" text="&quot;Taking you to Safety&quot;" textFill="#389294">
+            <font>
+                <Font name="Arial Bold" size="15.0" />
+            </font>
+        </Label>
+        <Accordion />
+        <Button fx:id="Help" layoutX="32.0" layoutY="303.0" mnemonicParsing="false" onAction="#Help" prefHeight="27.0" prefWidth="180.0" text="Help Menu" />
+        <Button fx:id="LogOut" layoutX="30.0" layoutY="445.0" mnemonicParsing="false" onAction="#Back" prefHeight="27.0" prefWidth="180.0" text="Back" />
+        <Button fx:id="ViewC" layoutX="31.0" layoutY="377.0" mnemonicParsing="false" onAction="#ViewCredit" prefHeight="27.0" prefWidth="180.0" text="User Details" />
+        <Button fx:id="SafetyForm" layoutX="32.0" layoutY="231.0" mnemonicParsing="false" onAction="#fillForm" prefHeight="27.0" prefWidth="180.0" text="Safety Form" />
+        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="165.0" layoutX="273.0" layoutY="64.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="511.0" />
+        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="154.0" layoutX="278.0" layoutY="69.0" stroke="#3f909a" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="2.0" width="501.0" />
+        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="255.0" layoutX="274.0" layoutY="244.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="256.0" />
+        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="244.0" layoutX="280.0" layoutY="250.0" stroke="#3f909a" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="2.0" width="246.0" />
+        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#dcfff0" height="259.0" layoutX="549.0" layoutY="242.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="235.0" />
+        <Label fx:id="GreetingPrompt1" alignment="CENTER" layoutX="558.0" layoutY="247.0" prefHeight="49.0" prefWidth="218.0" text="Queue Number">
+            <font>
+                <Font name="Arial Bold" size="26.0" />
+            </font>
+        </Label>
+        <Button fx:id="RideBus" disable="true" layoutX="567.0" layoutY="436.0" mnemonicParsing="false" onAction="#RideBus" prefHeight="49.0" prefWidth="203.0" text="Ride Bus" />
+        <Label fx:id="GreetingPrompt11" alignment="CENTER" layoutX="271.0" layoutY="16.0" prefHeight="49.0" prefWidth="208.0" text="Board a Bus" textFill="WHITE">
+            <font>
+                <Font name="Arial Bold" size="32.0" />
+            </font>
+        </Label>
+        <Label fx:id="GreetingPrompt111" alignment="CENTER" layoutX="279.0" layoutY="68.0" prefHeight="49.0" prefWidth="80.0" text="From:">
+            <font>
+                <Font name="Arial Bold" size="21.0" />
+            </font>
+        </Label>
+        <Label fx:id="GreetingPrompt1111" layoutX="290.0" layoutY="119.0" prefHeight="49.0" prefWidth="59.0" text="To:">
+            <font>
+                <Font name="Arial Bold" size="21.0" />
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d0d0d" height="136.0" layoutX="557.0" layoutY="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="6.0" />
+        <Label fx:id="Station" alignment="CENTER" layoutX="355.0" layoutY="70.0" prefHeight="49.0" prefWidth="193.0" text="--">
+            <font>
+                <Font name="Arial Bold" size="21.0" />
+            </font>
+        </Label>
+        <Label fx:id="Destination" alignment="CENTER" layoutX="354.0" layoutY="118.0" prefHeight="49.0" prefWidth="193.0" text="--">
+            <font>
+                <Font name="Arial Bold" size="21.0" />
+            </font>
+        </Label>
+        <Label fx:id="GreetingPrompt1113" alignment="CENTER" layoutX="572.0" layoutY="123.0" prefHeight="49.0" prefWidth="80.0" text="Price:">
+            <font>
+                <Font name="Arial Bold" size="21.0" />
+            </font>
+        </Label>
+        <Label fx:id="Price" alignment="CENTER" layoutX="674.0" layoutY="123.0" prefHeight="49.0" prefWidth="100.0" text="--">
+            <font>
+                <Font name="Arial Bold" size="21.0" />
+            </font>
+        </Label>
+        <Label fx:id="GreetingPrompt11131" alignment="CENTER" layoutX="562.0" layoutY="69.0" prefHeight="49.0" prefWidth="125.0" text="Remaining">
+            <font>
+                <Font name="Arial Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="GreetingPrompt111311" alignment="CENTER" layoutX="544.0" layoutY="86.0" prefHeight="49.0" prefWidth="125.0" text="Credit">
+            <font>
+                <Font name="Arial Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="GreetingPrompt11132" alignment="CENTER" layoutX="655.0" layoutY="74.0" prefHeight="49.0" prefWidth="31.0" text=":">
+            <font>
+                <Font name="Arial Bold" size="29.0" />
+            </font>
+        </Label>
+        <Label fx:id="RemainingCredit" alignment="CENTER" layoutX="674.0" layoutY="77.0" prefHeight="49.0" prefWidth="100.0" text="--">
+            <font>
+                <Font name="Arial Bold" size="21.0" />
+            </font>
+        </Label>
+        <Label fx:id="GreetingPrompt1113112" alignment="CENTER" layoutX="277.0" layoutY="248.0" prefHeight="46.0" prefWidth="155.0" text="Enter Station">
+            <font>
+                <Font name="Arial Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="GreetingPrompt11131121" alignment="CENTER" layoutX="300.0" layoutY="324.0" prefHeight="46.0" prefWidth="146.0" text="Enter Destination">
+            <font>
+                <Font name="Arial Bold" size="16.0" />
+            </font>
+        </Label>
+        <ChoiceBox fx:id="currentStation" layoutX="308.0" layoutY="288.0" prefHeight="27.0" prefWidth="182.0" />
+        <ChoiceBox fx:id="destinationStationBox" layoutX="308.0" layoutY="363.0" prefHeight="27.0" prefWidth="182.0" />
+        <Button fx:id="confirm" layoutX="330.0" layoutY="416.0" mnemonicParsing="false" onAction="#updateLabels" prefHeight="27.0" prefWidth="146.0" text="Select Stations" />
+        <Label fx:id="QueueNumber" alignment="CENTER" layoutX="604.0" layoutY="306.0" prefHeight="100.0" prefWidth="125.0" text="--">
+            <font>
+                <Font name="Arial Bold" size="96.0" />
+            </font>
+        </Label>
+        <Label fx:id="Message" layoutX="476.0" layoutY="24.0" prefHeight="33.0" prefWidth="256.0" textFill="RED">
+            <font>
+                <Font name="Arial Bold" size="15.0" />
+            </font>
+        </Label>
+        <Button fx:id="ConfirmButton" disable="true" layoutX="330.0" layoutY="453.0" mnemonicParsing="false" onAction="#ReadFromLast" prefHeight="27.0" prefWidth="146.0" text="Confirm " />
+        <Label fx:id="GreetingPrompt11133" alignment="CENTER" layoutX="288.0" layoutY="160.0" prefHeight="49.0" prefWidth="59.0" text="Date:">
+            <font>
+                <Font name="Arial Bold" size="21.0" />
+            </font>
+        </Label>
+        <Label fx:id="GreetingPrompt111331" alignment="CENTER" layoutX="580.0" layoutY="162.0" prefHeight="49.0" prefWidth="59.0" text="Time:">
+            <font>
+                <Font name="Arial Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="Date" alignment="CENTER" layoutX="354.0" layoutY="162.0" prefHeight="49.0" prefWidth="193.0" text="--">
+            <font>
+                <Font name="Arial Bold" size="21.0" />
+            </font>
+        </Label>
+        <Label fx:id="Time" alignment="CENTER" layoutX="661.0" layoutY="162.0" prefHeight="49.0" prefWidth="127.0" text="--">
+            <font>
+                <Font name="Arial" size="20.0" />
+            </font>
+        </Label>
+    </children>
+</Pane>

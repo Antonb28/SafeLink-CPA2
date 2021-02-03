@@ -13,9 +13,9 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.io.*;
 
-public class BoardBus {
-    ObservableList<String> currentStationList = FXCollections.observableArrayList("Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue");
-    ObservableList<String> destinationStationList = FXCollections.observableArrayList("Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue");
+public class BoardBusGreen {
+    ObservableList<String> currentStationList = FXCollections.observableArrayList("Taft Avenue","Vito Cruz","Gil Puyat","Quirino","Aurora","E. Rodriguez","Quezon Avenue","Balintawak");
+    ObservableList<String> destinationStationList = FXCollections.observableArrayList("Taft Avenue","Vito Cruz","Gil Puyat","Quirino","Aurora","E. Rodriguez","Quezon Avenue","Balintawak");
 
     @FXML
     Label Destination, Station, Price, RemainingCredit, Message, QueueNumber, Time, Date;
@@ -71,71 +71,55 @@ public class BoardBus {
 
                 currentStation_index = 1;
                 break;
-            case "Magallanes":
+            case "Vito Cruz":
                 currentStation_index = 2;
                 break;
-            case "Ayala":
+            case "Gil Puyat":
                 currentStation_index = 3;
                 break;
-            case "Buendia":
+            case "Quirino":
                 currentStation_index = 4;
                 break;
-            case "Guadalupe":
+            case "Aurora":
                 currentStation_index = 5;
                 break;
-            case "Boni":
+            case "E. Rodriguez":
                 currentStation_index = 6;
                 break;
-            case "Shaw":
+            case "Quezon Avenue":
                 currentStation_index = 7;
                 break;
-            case "Ortigas":
+            case "Balintawak":
                 currentStation_index = 8;
                 break;
-            case "Santolan":
-                currentStation_index = 9;
-                break;
-            case "Cubao":
-                currentStation_index = 10;
-                break;
-            case "Quezon Avenue":
-                currentStation_index = 11;
-                break;
+
         }
         switch (base2) {
-            case "Taft Avenue":
+            case "Ayala":
                 detinationStation_index = 1;
                 break;
-            case "Magallanes":
+            case "Vito Cruz":
                 detinationStation_index = 2;
                 break;
-            case "Ayala":
+            case "Gil Puyat":
                 detinationStation_index = 3;
                 break;
-            case "Buendia":
+            case "Quirino":
                 detinationStation_index = 4;
                 break;
-            case "Guadalupe":
+            case "Aurora":
                 detinationStation_index = 5;
                 break;
-            case "Boni":
+            case "E. Rodriguez":
                 detinationStation_index = 6;
                 break;
-            case "Shaw":
+            case "Quezon Avenue":
                 detinationStation_index = 7;
                 break;
-            case "Ortigas":
+            case "Balintawak":
                 detinationStation_index = 8;
                 break;
-            case "Santolan":
-                detinationStation_index = 9;
-                break;
-            case "Cubao":
-                detinationStation_index = 10;
-                break;
-            case "Quezon Avenue":
-                detinationStation_index = 11;
-                break;
+
         }
         int difference = (detinationStation_index - currentStation_index);
 
@@ -219,7 +203,7 @@ public class BoardBus {
             count++;
         }
         else if(pq.isEmpty()){
-            App.setRoot("OnBusScreen");
+            App.setRoot("OnBusScreenGreen");
         }
         else{
             QueueNumber.setText(String.valueOf(pq.peek()));

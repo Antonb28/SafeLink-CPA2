@@ -12,7 +12,7 @@ import java.io.File;
 
 import java.util.Random;
 
-public class BusScreen {
+public class BusScreenPink {
     @FXML
     Rectangle box1, box2, box3, box4, box5, box6, box7, box8, box9, box10;
     @FXML
@@ -33,7 +33,7 @@ public class BusScreen {
     Random rn = new Random();
     Queue<Rectangle> q = new LinkedList<>();
     int present_point,base;
-    String[] Stations = {"Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue"};
+    String[] Stations = {"Ayala","BGC","Bicutan","Sucat","Alabang"};
     int index;
 
     public void setPresent_point(int present_point){
@@ -55,48 +55,25 @@ public class BusScreen {
         path = file.getName();
         System.out.println(path);
         switch (path){
-            case "Taft Avenue.png":
+            case "Ayala.png":
 
                 index=0;
                 break;
-            case "Magallanes.png":
+            case "BGC.png":
 
                 index=1;
                 break;
-            case "Ayala.png":
+            case "Bicutan.png":
 
                 index=2;
                 break;
-            case "Buendia.png":
+            case "Sucat.png":
 
                 index=3;
                 break;
-            case "Guadalupe.png":
+            case "Alabang.png":
 
                 index=4;
-                break;
-            case "Boni.png":
-
-                index=5;
-                break;
-            case "Shaw.png":
-
-                index=6;
-                break;
-            case "Ortigas.png":
-
-                index=7;
-                break;
-            case "Santolan.png":
-
-                index=8;
-                break;
-            case "Cubao.png":
-
-                index=9;
-                break;
-            case "Quezon Avenue.png":
-                index=10;
                 break;
         }
         CurrentStationLabel.setText(Stations[index]);
@@ -107,10 +84,7 @@ public class BusScreen {
             index++;
             CurrentStationLabel.setText("No Previous Station");
         }
-        else if (base == index ){
-            CurrentStationLabel.setText(Stations[index]);
-            arrival.setText("Arrived in destination, exit bus");
-        }
+
         else {
             CurrentStationLabel.setText(Stations[index--]);
             ScanQR();
@@ -122,11 +96,7 @@ public class BusScreen {
             index--;
             CurrentStationLabel.setText("No Next Station");
         }
-//        else if (present_point == index ){
-//            CurrentStationLabel.setText(Stations[index]);
-//            arrival.setText("Arrived in destination");
-//
-//        }
+
         else {
             CurrentStationLabel.setText(Stations[index++]);
             ScanQR();
