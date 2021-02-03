@@ -68,6 +68,7 @@ public class BoardBus {
         int detinationStation_index = 0;
         switch (base) {
             case "Taft Avenue":
+
                 currentStation_index = 1;
                 break;
             case "Magallanes":
@@ -150,7 +151,16 @@ public class BoardBus {
         }
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
-
+        //file writing start
+        String path = System.getProperty("user.dir") + "\\src\\TravelHistory.txt";
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
+        try {
+            bufferedWriter.write("Starting Point: " + currentStation.getValue() + " \nDestination: " + destinationStationBox.getValue()+" \nDate and time: "+ date + time +"\n");
+            bufferedWriter.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
         Date.setText(String.valueOf(date));
         Time.setText(String.valueOf(time));
         ConfirmButton.setDisable(false);
