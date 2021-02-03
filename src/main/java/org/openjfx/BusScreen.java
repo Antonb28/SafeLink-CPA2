@@ -122,11 +122,11 @@ public class BusScreen {
             index--;
             CurrentStationLabel.setText("No Next Station");
         }
-        else if (present_point == index ){
-            CurrentStationLabel.setText(Stations[index]);
-            arrival.setText("Arrived in destination");
-
-        }
+//        else if (present_point == index ){
+//            CurrentStationLabel.setText(Stations[index]);
+//            arrival.setText("Arrived in destination");
+//
+//        }
         else {
             CurrentStationLabel.setText(Stations[index++]);
             ScanQR();

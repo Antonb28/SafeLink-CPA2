@@ -31,9 +31,6 @@ public class BoardBus {
     int queuenum = rn.nextInt(50);
     Queue<Integer> pq = new LinkedList<>();
 
-    BusScreen bs = new BusScreen();
-    BusScreen diffy = new BusScreen();
-
     @FXML
     private void LogOut() throws IOException {
         App.setRoot("LogIn");
@@ -61,7 +58,7 @@ public class BoardBus {
 
 
     @FXML
-    public void updateLabels() throws IOException {
+    private void updateLabels() throws IOException {
         Station.setText((String) currentStation.getValue());
         Destination.setText((String) destinationStationBox.getValue());
 
@@ -71,6 +68,7 @@ public class BoardBus {
         int detinationStation_index = 0;
         switch (base) {
             case "Taft Avenue":
+
                 currentStation_index = 1;
                 break;
             case "Magallanes":
@@ -153,17 +151,28 @@ public class BoardBus {
         }
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
+        //file writing start
+        String path = System.getProperty("user.dir") + "\\src\\TravelHistory.txt";
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
+        try {
+            bufferedWriter.write("\nStarting Point: " + currentStation.getValue() + " \nDestination: " + destinationStationBox.getValue()+" \nDate and time: "+ date + time +"\n");
+            bufferedWriter.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
         Date.setText(String.valueOf(date));
         Time.setText(String.valueOf(time));
         ConfirmButton.setDisable(false);
-        bs.setPresent_point(detinationStation_index);
-        diffy.setBase(currentStation_index);
     }
 
     public void ReadFromLast() throws IOException {
         String path = System.getProperty("user.dir") + "\\src\\Credit.txt";
+        String path2 = System.getProperty("user.dir") + "\\src\\TravelHistory.txt";
         FileInputStream in = new FileInputStream(path);
         FileWriter fileWriter = new FileWriter(path, true);
+        FileWriter fileWriter2 = new FileWriter(path2, true);
+
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         String strLine = null, tmp;
         while ((tmp = br.readLine()) != null) {
@@ -179,8 +188,12 @@ public class BoardBus {
         if (realcredit>=realprice){
             RemainingCredit.setText(String.valueOf(realchange));
             String change = RemainingCredit.getText();
+            fileWriter2.write("Remaining Credit: " +change+ "\n" + "Price of Trip: " +realprice+ "\n");
+            fileWriter2.close();
+
             fileWriter.write(change+"\n");
             fileWriter.close();
+
         }
 
         else if(realcredit < realprice){
