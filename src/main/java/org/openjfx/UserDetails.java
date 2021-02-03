@@ -32,23 +32,21 @@ public class UserDetails {
     }
 
     @FXML
-    private void Clear(){
-        Output.clear();
-    }
-
-    @FXML
     private void TransactionHistory(){
+        Output.clear();
         String path = System.getProperty("user.dir") + "\\src\\TravelHistory.txt";
         DisplayText(path);
     }
 
     @FXML
     private void ShowDetails() {
+        Output.clear();
         String path = System.getProperty("user.dir") + "\\src\\UserDetails.txt";
         DisplayText(path);
     }
 
     private void DisplayText(String path){
+        Output.clear();
         try{
             Scanner s = new Scanner(new File(path)).useDelimiter("");
             while (s.hasNext()) {

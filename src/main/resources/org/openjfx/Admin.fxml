@@ -22,10 +22,10 @@
             </font>
         </Label>
         <Accordion />
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3f909a" height="508.0" layoutX="20.0" layoutY="14.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="8.0" width="779.0" />
+        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#3f909a" height="508.0" layoutX="20.0" layoutY="14.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="8.0" width="779.0" />
         <Label layoutX="43.0" layoutY="29.0" prefHeight="48.0" prefWidth="733.0" text="Hello Admin! " textFill="WHITE">
             <font>
-                <Font name="Arial Bold" size="55.0" />
+                <Font name="Arial Bold" size="57.0" />
             </font>
         </Label>
       <Button layoutX="43.0" layoutY="109.0" mnemonicParsing="false" onAction="#OpenTransactions" prefHeight="55.0" prefWidth="233.0" text="Credit Card Transactions" />
@@ -35,8 +35,7 @@
       <Button layoutX="41.0" layoutY="432.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="55.0" prefWidth="233.0" text="Log Out" />
       <TextArea fx:id="Output" layoutX="303.0" layoutY="109.0" prefHeight="372.0" prefWidth="465.0">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="Arial" size="16.0" />
          </font></TextArea>
-      <Button layoutX="403.0" layoutY="34.0" mnemonicParsing="false" onAction="#Clear" prefHeight="55.0" prefWidth="233.0" text="Clear Output" />
     </children>
 </Pane>

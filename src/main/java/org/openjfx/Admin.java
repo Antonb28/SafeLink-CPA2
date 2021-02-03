@@ -18,34 +18,34 @@ public class Admin {
 
     @FXML
     private void OpenTravelHistory() {
+        Output.clear();
         String path =System.getProperty("user.dir") + "\\src\\TravelHistory.txt";
         DisplayText(path);
     }
 
     @FXML
     private void OpenLoad(){
+        Output.clear();
         String path = System.getProperty("user.dir") + "\\src\\Credit.txt";
         DisplayCredit(path);
     }
 
     @FXML
     private void OpenTransactions(){
+        Output.clear();
         String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
         DisplayText(path);
     }
 
     @FXML
     private void OpenSafetyForm(){
+        Output.clear();
         String path = System.getProperty("user.dir") + "\\src\\SafeForm.txt";
         DisplayText(path);
     }
 
-    @FXML
-    private void Clear(){
-        Output.clear();
-    }
-
     private void DisplayCredit(String path) {
+        Output.clear();
         try{
             Scanner s = new Scanner(new File(path)).useDelimiter("\\s+");
             while (s.hasNext()) {
@@ -61,6 +61,7 @@ public class Admin {
     }
 
     private void DisplayText(String path) {
+        Output.clear();
         try{
             Scanner s = new Scanner(new File(path)).useDelimiter("");
             while (s.hasNext()) {
