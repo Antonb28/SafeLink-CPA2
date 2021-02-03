@@ -38,6 +38,24 @@ public class UserDetails {
     }
 
     @FXML
+    private void TravelHistory(){
+        String path = System.getProperty("user.dir") + "\\src\\TravelHistory.txt";
+        try{
+            Scanner s = new Scanner(new File(path)).useDelimiter("");
+            while (s.hasNext()) {
+                if (s.hasNextInt()) { // check if next token is an int
+                    Output.appendText(s.nextInt() + "\n"); // display the found integer
+                } else {
+                    Output.appendText(s.next() + "\n"); // else read the next token
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.err.println(e);
+        }
+
+    }
+
+    @FXML
     private void TransactionHistory(){
         String path = System.getProperty("user.dir") + "\\src\\Credit.txt";
         try{

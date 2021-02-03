@@ -86,7 +86,7 @@
                 <Font name="Arial Bold" size="21.0" />
             </font>
         </Label>
-        <Label fx:id="Price" alignment="CENTER" layoutX="673.0" layoutY="123.0" prefHeight="49.0" prefWidth="100.0" text="--">
+        <Label fx:id="Price" alignment="CENTER" layoutX="674.0" layoutY="123.0" prefHeight="49.0" prefWidth="100.0" text="--">
             <font>
                 <Font name="Arial Bold" size="21.0" />
             </font>
@@ -150,7 +150,7 @@
                 <Font name="Arial Bold" size="21.0" />
             </font>
         </Label>
-        <Label fx:id="Time" alignment="CENTER" layoutX="645.0" layoutY="162.0" prefHeight="49.0" prefWidth="127.0" text="--">
+        <Label fx:id="Time" alignment="CENTER" layoutX="661.0" layoutY="162.0" prefHeight="49.0" prefWidth="127.0" text="--">
             <font>
                 <Font name="Arial" size="20.0" />
             </font>

@@ -1,9 +1,7 @@
 package org.openjfx;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -16,6 +14,12 @@ public class Admin {
     @FXML
     private void LogOut() throws IOException {
         App.setRoot("LogIn");
+    }
+
+    @FXML
+    private void OpenTravelHistory() {
+        String path =System.getProperty("user.dir") + "\\src\\TravelHistory.txt";
+        DisplayText(path);
     }
 
     @FXML

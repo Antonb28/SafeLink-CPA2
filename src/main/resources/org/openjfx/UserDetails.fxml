@@ -56,7 +56,7 @@
             <Font size="10.0" />
          </font>
       </TextArea>
-      <Button layoutX="461.0" layoutY="445.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="138.0" text="Show Travel History" />
+      <Button layoutX="461.0" layoutY="445.0" mnemonicParsing="false" onAction="#TravelHistory" prefHeight="39.0" prefWidth="138.0" text="Show Travel History" />
       <Button layoutX="613.0" layoutY="445.0" mnemonicParsing="false" onAction="#TransactionHistory" prefHeight="39.0" prefWidth="155.0" text="Show Transaction History" />
       <Label fx:id="GreetingPrompt111" layoutX="292.0" layoutY="71.0" prefHeight="49.0" prefWidth="72.0" text="Name:">
          <font>

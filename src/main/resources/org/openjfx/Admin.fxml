@@ -29,10 +29,10 @@
             </font>
         </Label>
       <Button layoutX="43.0" layoutY="109.0" mnemonicParsing="false" onAction="#OpenTransactions" prefHeight="55.0" prefWidth="233.0" text="Credit Card Transactions" />
-      <Button layoutX="42.0" layoutY="272.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="233.0" text="Travel Transactions" />
+      <Button layoutX="42.0" layoutY="272.0" mnemonicParsing="false" onAction="#OpenTravelHistory" prefHeight="55.0" prefWidth="233.0" text="Travel Transactions" />
       <Button layoutX="41.0" layoutY="349.0" mnemonicParsing="false" onAction="#OpenSafetyForm" prefHeight="55.0" prefWidth="233.0" text="Health Form Responses" />
       <Button layoutX="42.0" layoutY="192.0" mnemonicParsing="false" onAction="#OpenLoad" prefHeight="55.0" prefWidth="233.0" text="Credit Spend History" />
-      <Button layoutX="42.0" layoutY="426.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="55.0" prefWidth="233.0" text="Log Out" />
+      <Button layoutX="41.0" layoutY="432.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="55.0" prefWidth="233.0" text="Log Out" />
       <TextArea fx:id="Output" layoutX="303.0" layoutY="109.0" prefHeight="372.0" prefWidth="465.0">
          <font>
             <Font name="System Bold" size="12.0" />

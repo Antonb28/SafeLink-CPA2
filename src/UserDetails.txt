@@ -1,5 +1,0 @@
-First Name: James
-Last Name: Feliciano
-Age: 20
-Sex: Male
-Email: james_feliciano@dlsu.edu.ph
