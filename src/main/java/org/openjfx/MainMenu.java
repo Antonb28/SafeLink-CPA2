@@ -58,7 +58,7 @@ public class MainMenu {
 
     @FXML
     private void Transportation() throws IOException{
-        App.setRoot("BoardBus");
+        App.setRoot("RouteMenu");
     }
 
     @FXML
