@@ -168,8 +168,11 @@ public class BoardBus {
 
     public void ReadFromLast() throws IOException {
         String path = System.getProperty("user.dir") + "\\src\\Credit.txt";
+        String path2 = System.getProperty("user.dir") + "\\src\\TravelHistory.txt";
         FileInputStream in = new FileInputStream(path);
         FileWriter fileWriter = new FileWriter(path, true);
+        FileWriter fileWriter2 = new FileWriter(path2, true);
+
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         String strLine = null, tmp;
         while ((tmp = br.readLine()) != null) {
@@ -185,8 +188,12 @@ public class BoardBus {
         if (realcredit>=realprice){
             RemainingCredit.setText(String.valueOf(realchange));
             String change = RemainingCredit.getText();
+            fileWriter2.write("Remaining Credit: " +change+ "\n");
+            fileWriter2.close();
+
             fileWriter.write(change+"\n");
             fileWriter.close();
+
         }
 
         else if(realcredit < realprice){
