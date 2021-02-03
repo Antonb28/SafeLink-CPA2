@@ -14,9 +14,6 @@ public class Admin {
     TextArea Output;
 
     @FXML
-    Button ClearButton;
-
-    @FXML
     private void LogOut() throws IOException {
         App.setRoot("LogIn");
     }
