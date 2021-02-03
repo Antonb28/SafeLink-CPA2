@@ -155,7 +155,7 @@ public class BoardBus {
         String path = System.getProperty("user.dir") + "\\src\\TravelHistory.txt";
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
         try {
-            bufferedWriter.write("Starting Point: " + currentStation.getValue() + " \nDestination: " + destinationStationBox.getValue()+" \nDate and time: "+ date + time +"\n");
+            bufferedWriter.write("\nStarting Point: " + currentStation.getValue() + " \nDestination: " + destinationStationBox.getValue()+" \nDate and time: "+ date + time +"\n");
             bufferedWriter.close();
         }
         catch (IOException e) {
@@ -188,7 +188,7 @@ public class BoardBus {
         if (realcredit>=realprice){
             RemainingCredit.setText(String.valueOf(realchange));
             String change = RemainingCredit.getText();
-            fileWriter2.write("Remaining Credit: " +change+ "\n");
+            fileWriter2.write("Remaining Credit: " +change+ "\n" + "Price of Trip: " +realprice+ "\n");
             fileWriter2.close();
 
             fileWriter.write(change+"\n");
