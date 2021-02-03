@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public class Register {
     @FXML
-    TextField Username, Password, Password1, FirstName, LastName, Email, Age, Sex;
+    TextField Username, Password, Password1, FirstName, LastName, Email, Age;
 
     @FXML
     Label LogInPrompt;
@@ -27,34 +27,63 @@ public class Register {
         Male.setToggleGroup(RB);
         Female.setToggleGroup(RB);
 
-        try {
-            if(Password.getText().equals(Password1.getText())){
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Confirmation");
-                alert.setHeaderText("Are all credentials correct?");
-                alert.setContentText("Exit this dialog box to continue editing\nClick ok to confirm");
-                Optional<ButtonType> result = alert.showAndWait();
-                if(result.isPresent() && result.get() == ButtonType.OK){
-                    bufferedWriter.write(Username.getText() + "," + Password.getText()+"\n");
-                    bufferedWriter.close();
-                    bufferedWriter1.write("First Name: " + FirstName.getText() + "\n");
-                    bufferedWriter1.write("Last Name: " + LastName.getText() + "\n");
-                    bufferedWriter1.write("Age: " + Age.getText() + "\n");
-                    if(Male.isSelected()){
-                        bufferedWriter1.write("Sex: " + "Male" + "\n");
+        if(LastName.getText() == null || LastName.getText().trim().isEmpty()){
+            LogInPrompt.setText("Missing credential");
+        }
+
+        else if(FirstName.getText() == null || FirstName.getText().trim().isEmpty()){
+            LogInPrompt.setText("Missing credential");
+        }
+
+        else if(Username.getText() == null || Username.getText().trim().isEmpty()){
+            LogInPrompt.setText("Missing credential");
+        }
+
+        else if(Password.getText() == null || Password.getText().trim().isEmpty()){
+            LogInPrompt.setText("Missing credential");
+        }
+
+        else if(Password1.getText() == null || Password1.getText().trim().isEmpty()){
+            LogInPrompt.setText("Missing credential");
+        }
+
+        else if(Email.getText() == null || Email.getText().trim().isEmpty()){
+            LogInPrompt.setText("Missing credential");
+        }
+
+        else {
+
+            try {
+                if (Password.getText().equals(Password1.getText())) {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Confirmation");
+                    alert.setHeaderText("Are all credentials correct?");
+                    alert.setContentText("Exit this dialog box to continue editing\nClick ok to confirm");
+                    Optional<ButtonType> result = alert.showAndWait();
+                    if (result.isPresent() && result.get() == ButtonType.OK) {
+                        bufferedWriter.write(Username.getText() + "," + Password.getText() + "\n");
+                        bufferedWriter.close();
+                        bufferedWriter1.write("First Name: " + FirstName.getText() + "\n");
+                        bufferedWriter1.write("Last Name: " + LastName.getText() + "\n");
+                        bufferedWriter1.write("Age: " + Age.getText() + "\n");
+                        if (Male.isSelected()) {
+                            bufferedWriter1.write("Sex: " + "Male" + "\n");
+                        }
+                        if (Female.isSelected()) {
+                            bufferedWriter1.write("Sex: " + "Female" + "\n");
+                        }
+                        bufferedWriter1.write("Email: " + Email.getText() + "\n");
+                        bufferedWriter1.close();
+
                     }
-                    if(Female.isSelected()){
-                        bufferedWriter1.write("Sex: " + "Female" + "\n");
-                    }
-                    bufferedWriter1.write("Email: " + Email.getText() + "\n");
-                    bufferedWriter1.close();
                 }
+                else {
+                    LogInPrompt.setText("Passwords do not match.");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            else {
-                LogInPrompt.setText("Passwords do not match!");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+
         }
     }
 
@@ -72,7 +101,6 @@ public class Register {
         LastName.clear();
         Email.clear();
         Age.clear();
-        Sex.clear();
         LogInPrompt.setText("");
     }
 
