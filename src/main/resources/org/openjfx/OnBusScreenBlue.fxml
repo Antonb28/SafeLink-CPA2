@@ -105,7 +105,7 @@
             <Image url="@../../assets/Station%20QR%20Codes/Taft%20Avenue.png" />
          </image>
       </ImageView>
-      <ListView layoutX="632.0" layoutY="60.0" prefHeight="387.0" prefWidth="150.0" />
+      <ListView fx:id="TravelHistory" layoutX="632.0" layoutY="60.0" prefHeight="387.0" prefWidth="150.0" />
       <Label layoutX="634.0" layoutY="28.0" text="Travel History">
          <font>
             <Font name="Arial Bold" size="22.0" />

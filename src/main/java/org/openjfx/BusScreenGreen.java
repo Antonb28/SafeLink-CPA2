@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.control.Button;
@@ -27,6 +28,9 @@ public class BusScreenGreen {
     Button PrevButton, NextButton,SelectQRButton;
     @FXML
     Label CurrentStationLabel, arrival;
+    @FXML
+    ListView<String> TravelHistory;
+
 
 
     int[] array = new int[48];
@@ -35,6 +39,7 @@ public class BusScreenGreen {
     int present_point,base;
     String[] Stations = {"Taft Avenue","Vito Cruz","Gil Puyat","Quirino","Aurora","E. Rodriguez","Quezon Avenue","Balintawak"};
     int index;
+    Stack<String> stack = new Stack<>();
 
     public void setPresent_point(int present_point){
         this.present_point=present_point;
@@ -98,7 +103,12 @@ public class BusScreenGreen {
         }
 
         else {
+            stack.push(Stations[index]);
             CurrentStationLabel.setText(Stations[index--]);
+            while (!stack.empty()){
+                TravelHistory.getItems().add(stack.peek());
+                stack.pop();
+            }
             ScanQR();
         }
     }
@@ -110,7 +120,12 @@ public class BusScreenGreen {
         }
 
         else {
+            stack.push(Stations[index]);
             CurrentStationLabel.setText(Stations[index++]);
+            while (!stack.empty()){
+                TravelHistory.getItems().add(stack.peek());
+                stack.pop();
+            }
             ScanQR();
         }
     }

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.control.Button;
@@ -28,6 +29,9 @@ public class BusScreenBlue {
     @FXML
     Label CurrentStationLabel, arrival;
 
+    @FXML
+    ListView<String> TravelHistory;
+
 
     int[] array = new int[48];
     Random rn = new Random();
@@ -35,6 +39,7 @@ public class BusScreenBlue {
     int present_point,base;
     String[] Stations = {"Taft Avenue","Magallanes","Ayala","Buendia","Guadalupe","Boni","Shaw","Ortigas","Santolan","Cubao","Quezon Avenue"};
     int index;
+    Stack<String> stack = new Stack<>();
 
     public void setPresent_point(int present_point){
         this.present_point=present_point;
@@ -99,6 +104,7 @@ public class BusScreenBlue {
                 index=10;
                 break;
         }
+        stack.push(Stations[index]);
         CurrentStationLabel.setText(Stations[index]);
         ScanQR();
     }
@@ -112,7 +118,12 @@ public class BusScreenBlue {
             arrival.setText("Arrived in destination, exit bus");
         }
         else {
+            stack.push(Stations[index]);
             CurrentStationLabel.setText(Stations[index--]);
+            while (!stack.empty()){
+                TravelHistory.getItems().add(stack.peek());
+                stack.pop();
+            }
             ScanQR();
         }
     }
@@ -128,7 +139,12 @@ public class BusScreenBlue {
 //
 //        }
         else {
+            stack.push(Stations[index]);
             CurrentStationLabel.setText(Stations[index++]);
+            while (!stack.empty()){
+                TravelHistory.getItems().add(stack.peek());
+                stack.pop();
+            }
             ScanQR();
         }
     }
