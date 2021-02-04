@@ -194,7 +194,7 @@ public class BoardBusBlue {
             fileWriter2.write("Remaining Credit: " +change+ "\n" + "Price of Trip: " +realprice+ "\n");
             fileWriter2.close();
 
-            fileWriter.write(change+"\n");
+            fileWriter.write(change + "\n");
             fileWriter.close();
 
         }

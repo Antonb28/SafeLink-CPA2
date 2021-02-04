@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.control.Button;
@@ -26,9 +25,6 @@ public class BusScreenPink {
     Rectangle box41, box42, box43, box44, box45, box46, box47, box48;
     @FXML
     Button PrevButton, NextButton,SelectQRButton;
-
-    @FXML
-    ListView <String> TravelHistory;
     @FXML
     Label CurrentStationLabel, arrival;
 
@@ -39,7 +35,6 @@ public class BusScreenPink {
     int present_point,base;
     String[] Stations = {"Ayala","BGC","Bicutan","Sucat","Alabang"};
     int index;
-    Stack<String> stack = new Stack<>();
 
     public void setPresent_point(int present_point){
         this.present_point=present_point;
@@ -61,22 +56,26 @@ public class BusScreenPink {
         System.out.println(path);
         switch (path){
             case "Ayala.png":
+
                 index=0;
                 break;
             case "BGC.png":
+
                 index=1;
                 break;
             case "Bicutan.png":
+
                 index=2;
                 break;
             case "Sucat.png":
+
                 index=3;
                 break;
             case "Alabang.png":
+
                 index=4;
                 break;
         }
-        stack.push(Stations[index]);
         CurrentStationLabel.setText(Stations[index]);
         ScanQR();
     }
@@ -87,12 +86,7 @@ public class BusScreenPink {
         }
 
         else {
-            stack.push(Stations[index]);
             CurrentStationLabel.setText(Stations[index--]);
-            while (!stack.empty()){
-                TravelHistory.getItems().add(stack.peek());
-                stack.pop();
-            }
             ScanQR();
         }
     }
@@ -104,12 +98,7 @@ public class BusScreenPink {
         }
 
         else {
-            stack.push(Stations[index]);
             CurrentStationLabel.setText(Stations[index++]);
-            while (!stack.empty()){
-                TravelHistory.getItems().add(stack.peek());
-                stack.pop();
-            }
             ScanQR();
         }
     }

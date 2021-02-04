@@ -104,7 +104,6 @@ public class BusScreenBlue {
                 index=10;
                 break;
         }
-        stack.push(Stations[index]);
         CurrentStationLabel.setText(Stations[index]);
         ScanQR();
     }
