@@ -1,15 +1,12 @@
 package org.openjfx;
 import java.io.*;
-import java.net.PasswordAuthentication;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 import javafx.fxml.FXML;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.control.*;
 
 
 public class CreditLoading {
-    int i, intcred, getIntcred;
+    int intcred, getIntcred;
     @FXML
     public TextField DateTextField, CardNumTextField, Credit;
 
@@ -33,7 +30,6 @@ public class CreditLoading {
         String path = System.getProperty("user.dir") + "\\src\\CreditCards.txt";
 
         try {
-            i+=1;
             FileWriter fw = new FileWriter(path, true);
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Confirmation");
@@ -43,7 +39,7 @@ public class CreditLoading {
 
             if (creditcardnum.length() == 16 && cvv.length() == 3 && date.length() == 5) {
                 if (result.isPresent() && result.get() == ButtonType.OK) {
-                    fw.write( i + "." + "Credit Card Number:" + creditcardnum + "\n" + "CVV:" +  cvv + "\n" + "Expiry Date:" + date + "\n");
+                    fw.write( "Credit Card Number:" + creditcardnum + "\n" + "CVV:" +  cvv + "\n" + "Expiry Date:" + date + "\n");
                     fw.close();
                     ConfirmButton.setDisable(false);
                 }
