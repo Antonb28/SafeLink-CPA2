@@ -6,6 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.Queue;
 import java.util.LinkedList;
@@ -134,19 +137,20 @@ public class BoardBusGreen {
             Price.setText(String.valueOf(price));
         }
         LocalDate date = LocalDate.now();
-        LocalTime time = LocalTime.now();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
         //file writing start
         String path = System.getProperty("user.dir") + "\\src\\TravelHistory.txt";
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
         try {
-            bufferedWriter.write("\nStarting Point: " + currentStation.getValue() + " \nDestination: " + destinationStationBox.getValue()+" \nDate and time: "+ date + time +"\n");
+            bufferedWriter.write("\nStarting Point: " + currentStation.getValue() + " \nDestination: " + destinationStationBox.getValue()+" \nDate and time: "+ date + dtf.format(now) +"\n");
             bufferedWriter.close();
         }
         catch (IOException e) {
             e.printStackTrace();
         }
         Date.setText(String.valueOf(date));
-        Time.setText(String.valueOf(time));
+        Time.setText(dtf.format(now));
         ConfirmButton.setDisable(false);
     }
 

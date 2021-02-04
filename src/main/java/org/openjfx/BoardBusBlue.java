@@ -11,6 +11,8 @@ import java.util.Queue;
 import java.util.LinkedList;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 import java.io.*;
 
 public class BoardBusBlue {
@@ -150,19 +152,20 @@ public class BoardBusBlue {
             Price.setText(String.valueOf(price));
         }
         LocalDate date = LocalDate.now();
-        LocalTime time = LocalTime.now();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
         //file writing start
         String path = System.getProperty("user.dir") + "\\src\\TravelHistory.txt";
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
         try {
-            bufferedWriter.write("\nStarting Point: " + currentStation.getValue() + " \nDestination: " + destinationStationBox.getValue()+" \nDate and time: "+ date + time +"\n");
+            bufferedWriter.write("\nStarting Point: " + currentStation.getValue() + " \nDestination: " + destinationStationBox.getValue()+" \nDate and time: "+ date + dtf.format(now) +"\n");
             bufferedWriter.close();
         }
         catch (IOException e) {
             e.printStackTrace();
         }
         Date.setText(String.valueOf(date));
-        Time.setText(String.valueOf(time));
+        Time.setText(dtf.format(now));
         ConfirmButton.setDisable(false);
     }
 
