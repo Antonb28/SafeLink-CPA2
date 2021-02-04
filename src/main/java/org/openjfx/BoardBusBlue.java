@@ -158,7 +158,7 @@ public class BoardBusBlue {
         String path = System.getProperty("user.dir") + "\\src\\TravelHistory.txt";
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
         try {
-            bufferedWriter.write("\nStarting Point: " + currentStation.getValue() + " \nDestination: " + destinationStationBox.getValue()+" \nDate and time: "+ date + dtf.format(now) +"\n");
+            bufferedWriter.write("\nStarting Point: " + currentStation.getValue() + " \nDestination: " + destinationStationBox.getValue()+" \nDate and time: "+ date + " " + dtf.format(now) +"\n");
             bufferedWriter.close();
         }
         catch (IOException e) {
