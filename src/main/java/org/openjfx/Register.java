@@ -77,7 +77,7 @@ public class Register {
                         }
                         bufferedWriter1.write("Email: " + Email.getText() + "\n");
                         bufferedWriter1.close();
-
+                        App.setRoot("LogIn");
                     }
                 }
                 else {
@@ -89,10 +89,10 @@ public class Register {
         }
     }
 
-    @FXML
-    private void GoBack() throws IOException {
-        App.setRoot("LogIn");
-    }
+//    @FXML
+//    private void GoBack() throws IOException {
+//        App.setRoot("LogIn");
+//    }
 
     @FXML
     private void Reset() {
